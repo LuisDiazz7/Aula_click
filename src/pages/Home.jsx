@@ -198,19 +198,19 @@ export default function Home() {
             </div>
             <div className="stats-grid">
               <StatCard
-                Icon={IconLayout}
+                icon={IconLayout}
                 value={asignaturas.length}
                 label="Asignaturas activas"
                 accent="purple"
               />
               <StatCard
-                Icon={IconPen}
+                icon={IconPen}
                 value={conteo ?? 0}
                 label="Ejercicios completados"
                 accent="amber"
               />
               <StatCard
-                Icon={IconGauge}
+                icon={IconGauge}
                 value={`${PROGRESO_GENERAL_MOCK}%`}
                 label="Progreso general"
                 accent="green"
