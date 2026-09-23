@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { useAuth } from '../hooks/useAuth'
 import { signOut } from '../services/authService'
+import { IconBot } from '../utils/icons'
 
 export default function Navbar() {
   const { user, perfil } = useAuth()
@@ -44,6 +45,14 @@ export default function Navbar() {
               </NavLink>
               <NavLink to="/asignaturas" className={linkClass} onClick={() => setOpen(false)}>
                 Asignaturas
+              </NavLink>
+              <NavLink
+                to="/tutor-ia"
+                className={`${linkClass} nav-link-icon`}
+                onClick={() => setOpen(false)}
+              >
+                <IconBot aria-hidden="true" />
+                Tutor IA
               </NavLink>
               <NavLink to="/perfil" className={linkClass} onClick={() => setOpen(false)}>
                 Mi perfil
