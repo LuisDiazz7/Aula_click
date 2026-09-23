@@ -14,6 +14,7 @@ import DetalleRama from './pages/DetalleRama'
 import DetalleTema from './pages/DetalleTema'
 import Ejercitacion from './pages/Ejercitacion'
 import Perfil from './pages/Perfil'
+import TutorIA from './pages/TutorIA'
 import Landing from './pages/Landing'
 
 function FallbackRoute() {
@@ -46,6 +47,7 @@ function Shell() {
               <Route path="/rama/:id" element={<DetalleRama />} />
               <Route path="/tema/:id" element={<DetalleTema />} />
               <Route path="/tema/:id/ejercitacion" element={<Ejercitacion />} />
+              <Route path="/tutor-ia" element={<TutorIA />} />
               <Route path="/perfil" element={<Perfil />} />
             </Route>
           </Route>
