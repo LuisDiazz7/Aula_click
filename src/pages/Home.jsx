@@ -125,22 +125,23 @@ function ContinueCard({ asignatura, rama, tema, descripcion, link, puntaje }) {
 
 export default function Home() {
   const { perfil, usuarioDb } = useAuth()
+  const progreso = useProgreso(usuarioDb?.id)
   const [asignaturas, setAsignaturas] = useState([])
   const [ultimaActividad, setUltimaActividad] = useState(null)
-  const [conteo, setConteo] = useState(null)
   const [cargando, setCargando] = useState(true)
 
   useEffect(() => {
-    if (!perfil?.id_curso) return
+    if (!perfil?.id_curso) {
+      setCargando(false)
+      return
+    }
     ;(async () => {
-      const [{ data }, { data: actividad }, { count }] = await Promise.all([
+      const [{ data }, { data: actividad }] = await Promise.all([
         getAsignaturasPorCurso(perfil.id_curso),
         usuarioDb?.id ? getUltimaActividad(usuarioDb.id) : Promise.resolve({ data: null }),
-        usuarioDb?.id ? getConteoResultados(usuarioDb.id) : Promise.resolve({ count: null }),
       ])
       setAsignaturas(data || [])
       setUltimaActividad(actividad || null)
-      setConteo(count)
       setCargando(false)
     })()
   }, [perfil, usuarioDb])
@@ -186,7 +187,7 @@ export default function Home() {
             </p>
           </div>
 
-          <HeroArt />
+          <HeroArt progreso={progreso.general} puntaje={ultimaActividad?.puntaje} />
         </div>
       </section>
 
