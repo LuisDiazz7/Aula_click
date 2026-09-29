@@ -1,6 +1,11 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { resetPasswordForEmail } from '../services/authService'
+import AuthShell from '../components/auth/AuthShell'
+import AuthField from '../components/auth/AuthField'
+import AuthAlert from '../components/auth/AuthAlert'
+import AuthSubmit from '../components/auth/AuthSubmit'
+import { IconMail, IconArrowLeft } from '../utils/icons'
 
 export default function RecuperarPassword() {
   const [correo, setCorreo] = useState('')
@@ -25,51 +30,41 @@ export default function RecuperarPassword() {
   }
 
   return (
-    <div className="auth-page">
-      <div className="auth-card">
-        <div className="auth-brand">
-          <span className="brand-logo">A</span>
-          <h1>Recuperar contraseña</h1>
-          <p>Te enviaremos un enlace para restablecerla</p>
-        </div>
+    <AuthShell
+      title="Recuperar contraseña"
+      subtitle="Te enviaremos un enlace para restablecerla."
+      footer={
+        <Link className="auth-back" to="/login">
+          <IconArrowLeft aria-hidden="true" />
+          Volver a iniciar sesión
+        </Link>
+      }
+    >
+      {enviado ? (
+        <AuthAlert tone="ok">
+          Si el correo está registrado, te llegó un enlace para restablecer tu contraseña.
+          Revisa tu bandeja de entrada (y también la carpeta de spam).
+        </AuthAlert>
+      ) : (
+        <form onSubmit={handleSubmit} className="auth-form">
+          <AuthField
+            id="correo"
+            label="Correo electrónico"
+            type="email"
+            icon={IconMail}
+            value={correo}
+            onChange={(e) => setCorreo(e.target.value)}
+            placeholder="estudiante@ejemplo.cl"
+            autoComplete="email"
+          />
 
-        {enviado ? (
-          <div>
-            <p className="form-ok">
-              Si el correo está registrado, te llegó un enlace para restablecer tu
-              contraseña. Revisa tu bandeja de entrada (y también la carpeta de spam).
-            </p>
-            <p className="auth-alt">
-              <Link to="/login">Volver a iniciar sesión</Link>
-            </p>
-          </div>
-        ) : (
-          <form onSubmit={handleSubmit} className="auth-form">
-            <div className="field">
-              <label htmlFor="correo">Correo electrónico</label>
-              <input
-                id="correo"
-                type="email"
-                value={correo}
-                onChange={(e) => setCorreo(e.target.value)}
-                placeholder="estudiante@ejemplo.cl"
-                required
-                autoComplete="email"
-              />
-            </div>
+          <AuthAlert>{error}</AuthAlert>
 
-            {error && <p className="form-error">{error}</p>}
-
-            <button type="submit" className="btn btn-primary btn-block" disabled={cargando}>
-              {cargando ? 'Enviando...' : 'Enviar enlace'}
-            </button>
-          </form>
-        )}
-
-        <p className="auth-alt">
-          ¿Recordaste tu contraseña? <Link to="/login">Inicia sesión</Link>
-        </p>
-      </div>
-    </div>
+          <AuthSubmit loading={cargando} loadingText="Enviando...">
+            Enviar enlace
+          </AuthSubmit>
+        </form>
+      )}
+    </AuthShell>
   )
 }

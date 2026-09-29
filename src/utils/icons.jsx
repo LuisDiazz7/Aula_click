@@ -179,3 +179,70 @@ export function IconClock(props) {
     </svg>
   )
 }
+
+export function IconMail(props) {
+  return (
+    <svg {...base} {...props}>
+      <rect x="2.5" y="4.5" width="19" height="15" rx="3" />
+      <path d="M3.5 7.5l7.1 4.8a2.1 2.1 0 0 0 2.4 0L20.5 7.5" />
+    </svg>
+  )
+}
+
+export function IconLock(props) {
+  return (
+    <svg {...base} {...props}>
+      <rect x="4" y="10" width="16" height="11" rx="3" />
+      <path d="M8.5 10V7.5a3.5 3.5 0 0 1 7 0V10" />
+      <path d="M12 14.3v2.4" />
+    </svg>
+  )
+}
+
+export function IconUser(props) {
+  return (
+    <svg {...base} {...props}>
+      <circle cx="12" cy="8.5" r="3.8" />
+      <path d="M4.6 20a7.4 7.4 0 0 1 14.8 0" />
+    </svg>
+  )
+}
+
+export function IconEye(props) {
+  return (
+    <svg {...base} {...props}>
+      <path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z" />
+      <circle cx="12" cy="12" r="3.2" />
+    </svg>
+  )
+}
+
+export function IconEyeOff(props) {
+  return (
+    <svg {...base} {...props}>
+      <path d="M9.7 5.9A9.4 9.4 0 0 1 12 5.5c6 0 9.5 6.5 9.5 6.5a17.4 17.4 0 0 1-3.2 3.9" />
+      <path d="M6.5 7.7A16.8 16.8 0 0 0 2.5 12S6 18.5 12 18.5a9.7 9.7 0 0 0 3.3-.6" />
+      <path d="M10.1 10.2a2.9 2.9 0 0 0 3.8 3.8" />
+      <path d="M3.6 3.6l16.8 16.8" />
+    </svg>
+  )
+}
+
+export function IconAlert(props) {
+  return (
+    <svg {...base} {...props}>
+      <circle cx="12" cy="12" r="9.5" />
+      <path d="M12 7.4v5.4" />
+      <path d="M12 16.5h.01" />
+    </svg>
+  )
+}
+
+export function IconArrowLeft(props) {
+  return (
+    <svg {...base} {...props}>
+      <path d="M19 12H5" />
+      <path d="M11 6l-6 6 6 6" />
+    </svg>
+  )
+}
