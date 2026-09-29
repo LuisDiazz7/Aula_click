@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useAuth } from '../hooks/useAuth'
+import { useProgreso } from '../hooks/useProgreso'
 import { getAsignaturasPorCurso } from '../services/contentService'
-import { getConteoResultados, getUltimaActividad } from '../services/quizService'
+import { getUltimaActividad } from '../services/quizService'
 import SubjectCard from '../components/SubjectCard'
 import Reveal from '../components/Reveal'
 import Loading from '../components/Loading'
@@ -18,9 +19,9 @@ import {
   IconPlay,
   IconSpark,
 } from '../utils/icons'
-import { CONTINUA_MOCK, PROGRESO_GENERAL_MOCK } from '../data/progresoMock'
+import { CONTINUA_MOCK } from '../data/progresoMock'
 
-function HeroArt() {
+function HeroArt({ progreso = 0, puntaje = null }) {
   return (
     <div className="hero-art" aria-hidden="true">
       <span className="hero-art-blob hero-art-blob-1"></span>
@@ -43,17 +44,17 @@ function HeroArt() {
               cy="60"
               r="52"
               pathLength="100"
-              strokeDasharray={`${PROGRESO_GENERAL_MOCK} 100`}
+              strokeDasharray={`${progreso} 100`}
             />
           </svg>
           <span className="hero-art-ring-label">
-            <strong>{PROGRESO_GENERAL_MOCK}%</strong>
+            <strong>{progreso}%</strong>
             <small>de tu meta</small>
           </span>
         </div>
         <div className="hero-art-foot">
           <div className="mini-tag">⚛ Álgebra</div>
-          <div className="mini-tag strong">+120 pts</div>
+          {puntaje != null && <div className="mini-tag strong">+{puntaje} pts</div>}
         </div>
       </div>
 
