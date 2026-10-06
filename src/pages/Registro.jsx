@@ -1,6 +1,11 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { signUp } from '../services/authService'
+import AuthShell from '../components/auth/AuthShell'
+import AuthField from '../components/auth/AuthField'
+import AuthAlert from '../components/auth/AuthAlert'
+import AuthSubmit from '../components/auth/AuthSubmit'
+import { IconUser, IconMail, IconLock } from '../utils/icons'
 
 export default function Registro() {
   const navigate = useNavigate()
@@ -8,6 +13,7 @@ export default function Registro() {
   const [correo, setCorreo] = useState('')
   const [contrasena, setContrasena] = useState('')
   const [confirmacion, setConfirmacion] = useState('')
+  const [aceptado, setAceptado] = useState(false)
   const [error, setError] = useState('')
   const [cargando, setCargando] = useState(false)
 
@@ -16,6 +22,7 @@ export default function Registro() {
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(correo.trim())) return 'Ingresa un correo válido.'
     if (contrasena.length < 6) return 'La contraseña debe tener al menos 6 caracteres.'
     if (contrasena !== confirmacion) return 'Las contraseñas no coinciden.'
+    if (!aceptado) return 'Debes aceptar los Términos de Servicio y la Política de Privacidad.'
     return ''
   }
 
@@ -43,77 +50,83 @@ export default function Registro() {
   }
 
   return (
-    <div className="auth-page">
-      <div className="auth-card">
-        <div className="auth-brand">
-          <span className="brand-logo">A</span>
-          <h1>Crear cuenta</h1>
-          <p>Únete a Aula Click y estudia a tu ritmo</p>
+    <AuthShell
+      title="Crea tu cuenta"
+      subtitle="Empieza a aprender a tu ritmo con Aula Click."
+      footer={
+        <p className="auth-foot-alt">
+          ¿Ya tienes cuenta?{' '}
+          <Link className="auth-link" to="/login">
+            Iniciar sesión
+          </Link>
+        </p>
+      }
+    >
+      <form onSubmit={handleSubmit} className="auth-form">
+        <AuthField
+          id="nombre"
+          label="Nombre"
+          icon={IconUser}
+          value={nombre}
+          onChange={(e) => setNombre(e.target.value)}
+          placeholder="Ej: María González"
+          autoComplete="name"
+        />
+
+        <AuthField
+          id="correo"
+          label="Correo electrónico"
+          type="email"
+          icon={IconMail}
+          value={correo}
+          onChange={(e) => setCorreo(e.target.value)}
+          placeholder="estudiante@ejemplo.cl"
+          autoComplete="email"
+        />
+
+        <AuthField
+          id="contrasena"
+          label="Contraseña"
+          type="password"
+          icon={IconLock}
+          value={contrasena}
+          onChange={(e) => setContrasena(e.target.value)}
+          placeholder="Mínimo 6 caracteres"
+          autoComplete="new-password"
+        />
+
+        <AuthField
+          id="confirmacion"
+          label="Repetir contraseña"
+          type="password"
+          icon={IconLock}
+          value={confirmacion}
+          onChange={(e) => setConfirmacion(e.target.value)}
+          placeholder="Repite tu contraseña"
+          autoComplete="new-password"
+        />
+
+        <div className="auth-terms">
+          <input
+            id="terminos"
+            type="checkbox"
+            checked={aceptado}
+            onChange={(e) => setAceptado(e.target.checked)}
+            aria-labelledby="terminos-texto"
+          />
+          <span id="terminos-texto">
+            <label htmlFor="terminos">Acepto los</label>{' '}
+            <a href="/terminos">Términos de Servicio</a> y la{' '}
+            <a href="/privacidad">Política de Privacidad</a> de Aula Click.
+          </span>
         </div>
 
-        <form onSubmit={handleSubmit} className="auth-form">
-          <div className="field">
-            <label htmlFor="nombre">Nombre</label>
-            <input
-              id="nombre"
-              type="text"
-              value={nombre}
-              onChange={(e) => setNombre(e.target.value)}
-              placeholder="Ej: María González"
-              required
-            />
-          </div>
+        <AuthAlert>{error}</AuthAlert>
 
-          <div className="field">
-            <label htmlFor="correo">Correo electrónico</label>
-            <input
-              id="correo"
-              type="email"
-              value={correo}
-              onChange={(e) => setCorreo(e.target.value)}
-              placeholder="estudiante@ejemplo.cl"
-              required
-              autoComplete="email"
-            />
-          </div>
-
-          <div className="field">
-            <label htmlFor="contrasena">Contraseña</label>
-            <input
-              id="contrasena"
-              type="password"
-              value={contrasena}
-              onChange={(e) => setContrasena(e.target.value)}
-              placeholder="Mínimo 6 caracteres"
-              required
-              autoComplete="new-password"
-            />
-          </div>
-
-          <div className="field">
-            <label htmlFor="confirmacion">Repetir contraseña</label>
-            <input
-              id="confirmacion"
-              type="password"
-              value={confirmacion}
-              onChange={(e) => setConfirmacion(e.target.value)}
-              placeholder="Repite tu contraseña"
-              required
-              autoComplete="new-password"
-            />
-          </div>
-
-          {error && <p className="form-error">{error}</p>}
-
-          <button type="submit" className="btn btn-primary btn-block" disabled={cargando}>
-            {cargando ? 'Creando cuenta...' : 'Registrarme'}
-          </button>
-        </form>
-
-        <p className="auth-alt">
-          ¿Ya tienes cuenta? <Link to="/login">Inicia sesión</Link>
-        </p>
-      </div>
-    </div>
+        <AuthSubmit loading={cargando} loadingText="Creando cuenta...">
+          Crear cuenta
+        </AuthSubmit>
+      </form>
+    </AuthShell>
   )
 }

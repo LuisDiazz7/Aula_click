@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom'
 import { iconMap, IconArrowRight } from '../utils/icons'
-import { PROGRESO_SUBJECT_MOCK } from '../data/progresoMock'
 
 export default function SubjectCard({ asignatura, cursoNombre, progreso }) {
   const key = asignatura.nombre?.toLowerCase() || ''
   const Icon = iconMap[key] || null
-  const pct = progreso ?? PROGRESO_SUBJECT_MOCK[key] ?? 0
+  // Sin datos reales la asignatura parte en 0%, nunca en un valor de ejemplo.
+  const pct = Number.isFinite(progreso) ? progreso : 0
 
   return (
     <div className="card subject-card" data-icon={key}>

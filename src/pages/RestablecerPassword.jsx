@@ -1,6 +1,11 @@
 import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { updatePassword, signOut, getSession } from '../services/authService'
+import AuthShell from '../components/auth/AuthShell'
+import AuthField from '../components/auth/AuthField'
+import AuthAlert from '../components/auth/AuthAlert'
+import AuthSubmit from '../components/auth/AuthSubmit'
+import { IconLock } from '../utils/icons'
 
 export default function RestablecerPassword() {
   const navigate = useNavigate()
@@ -42,64 +47,52 @@ export default function RestablecerPassword() {
 
   if (!lista) {
     return (
-      <div className="auth-page">
-        <div className="auth-card">
-          <div className="auth-brand">
-            <span className="brand-logo">A</span>
-            <h1>Restablecer contraseña</h1>
-            <p>El enlace de recuperación no es válido o ya fue utilizado.</p>
-          </div>
-          <p className="auth-alt">
-            <Link to="/recuperar-password">Solicitar un nuevo enlace</Link>
-          </p>
-        </div>
-      </div>
+      <AuthShell
+        title="Enlace no válido"
+        subtitle="El enlace de recuperación no es válido o ya fue utilizado."
+        footer={
+          <Link className="auth-back" to="/recuperar-password">
+            Solicitar un nuevo enlace
+          </Link>
+        }
+      />
     )
   }
 
   return (
-    <div className="auth-page">
-      <div className="auth-card">
-        <div className="auth-brand">
-          <span className="brand-logo">A</span>
-          <h1>Nueva contraseña</h1>
-          <p>Para {correo}</p>
-        </div>
+    <AuthShell
+      title="Nueva contraseña"
+      subtitle={`Elige una nueva contraseña para ${correo}.`}
+    >
+      <form onSubmit={handleSubmit} className="auth-form">
+        <AuthField
+          id="contrasena"
+          label="Nueva contraseña"
+          type="password"
+          icon={IconLock}
+          value={contrasena}
+          onChange={(e) => setContrasena(e.target.value)}
+          placeholder="Mínimo 6 caracteres"
+          autoComplete="new-password"
+        />
 
-        <form onSubmit={handleSubmit} className="auth-form">
-          <div className="field">
-            <label htmlFor="contrasena">Nueva contraseña</label>
-            <input
-              id="contrasena"
-              type="password"
-              value={contrasena}
-              onChange={(e) => setContrasena(e.target.value)}
-              placeholder="Mínimo 6 caracteres"
-              required
-              autoComplete="new-password"
-            />
-          </div>
+        <AuthField
+          id="confirmacion"
+          label="Repetir contraseña"
+          type="password"
+          icon={IconLock}
+          value={confirmacion}
+          onChange={(e) => setConfirmacion(e.target.value)}
+          placeholder="Repite tu nueva contraseña"
+          autoComplete="new-password"
+        />
 
-          <div className="field">
-            <label htmlFor="confirmacion">Repetir contraseña</label>
-            <input
-              id="confirmacion"
-              type="password"
-              value={confirmacion}
-              onChange={(e) => setConfirmacion(e.target.value)}
-              placeholder="Repite tu nueva contraseña"
-              required
-              autoComplete="new-password"
-            />
-          </div>
+        <AuthAlert>{error}</AuthAlert>
 
-          {error && <p className="form-error">{error}</p>}
-
-          <button type="submit" className="btn btn-primary btn-block" disabled={cargando}>
-            {cargando ? 'Guardando...' : 'Guardar nueva contraseña'}
-          </button>
-        </form>
-      </div>
-    </div>
+        <AuthSubmit loading={cargando} loadingText="Guardando...">
+          Guardar nueva contraseña
+        </AuthSubmit>
+      </form>
+    </AuthShell>
   )
 }

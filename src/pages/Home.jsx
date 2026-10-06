@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useAuth } from '../hooks/useAuth'
+import { useProgreso } from '../hooks/useProgreso'
 import { getAsignaturasPorCurso } from '../services/contentService'
-import { getConteoResultados, getUltimaActividad } from '../services/quizService'
+import { getUltimaActividad } from '../services/quizService'
 import SubjectCard from '../components/SubjectCard'
 import Reveal from '../components/Reveal'
 import Loading from '../components/Loading'
@@ -18,9 +19,9 @@ import {
   IconPlay,
   IconSpark,
 } from '../utils/icons'
-import { CONTINUA_MOCK, PROGRESO_GENERAL_MOCK } from '../data/progresoMock'
+import { CONTINUA_MOCK } from '../data/progresoMock'
 
-function HeroArt() {
+function HeroArt({ progreso = 0, puntaje = null }) {
   return (
     <div className="hero-art" aria-hidden="true">
       <span className="hero-art-blob hero-art-blob-1"></span>
@@ -43,17 +44,17 @@ function HeroArt() {
               cy="60"
               r="52"
               pathLength="100"
-              strokeDasharray={`${PROGRESO_GENERAL_MOCK} 100`}
+              strokeDasharray={`${progreso} 100`}
             />
           </svg>
           <span className="hero-art-ring-label">
-            <strong>{PROGRESO_GENERAL_MOCK}%</strong>
+            <strong>{progreso}%</strong>
             <small>de tu meta</small>
           </span>
         </div>
         <div className="hero-art-foot">
           <div className="mini-tag">⚛ Álgebra</div>
-          <div className="mini-tag strong">+120 pts</div>
+          {puntaje != null && <div className="mini-tag strong">+{puntaje} pts</div>}
         </div>
       </div>
 
@@ -124,22 +125,23 @@ function ContinueCard({ asignatura, rama, tema, descripcion, link, puntaje }) {
 
 export default function Home() {
   const { perfil, usuarioDb } = useAuth()
+  const progreso = useProgreso(usuarioDb?.id)
   const [asignaturas, setAsignaturas] = useState([])
   const [ultimaActividad, setUltimaActividad] = useState(null)
-  const [conteo, setConteo] = useState(null)
   const [cargando, setCargando] = useState(true)
 
   useEffect(() => {
-    if (!perfil?.id_curso) return
+    if (!perfil?.id_curso) {
+      setCargando(false)
+      return
+    }
     ;(async () => {
-      const [{ data }, { data: actividad }, { count }] = await Promise.all([
+      const [{ data }, { data: actividad }] = await Promise.all([
         getAsignaturasPorCurso(perfil.id_curso),
         usuarioDb?.id ? getUltimaActividad(usuarioDb.id) : Promise.resolve({ data: null }),
-        usuarioDb?.id ? getConteoResultados(usuarioDb.id) : Promise.resolve({ count: null }),
       ])
       setAsignaturas(data || [])
       setUltimaActividad(actividad || null)
-      setConteo(count)
       setCargando(false)
     })()
   }, [perfil, usuarioDb])
@@ -185,7 +187,7 @@ export default function Home() {
             </p>
           </div>
 
-          <HeroArt />
+          <HeroArt progreso={progreso.general} puntaje={ultimaActividad?.puntaje} />
         </div>
       </section>
 
@@ -205,16 +207,16 @@ export default function Home() {
               />
               <StatCard
                 icon={IconPen}
-                value={conteo ?? 0}
+                value={progreso.ejerciciosCompletados}
                 label="Ejercicios completados"
                 accent="amber"
               />
               <StatCard
                 icon={IconGauge}
-                value={`${PROGRESO_GENERAL_MOCK}%`}
+                value={`${progreso.general}%`}
                 label="Progreso general"
                 accent="green"
-                bar={PROGRESO_GENERAL_MOCK}
+                bar={progreso.general}
               />
             </div>
           </section>
@@ -235,7 +237,10 @@ export default function Home() {
               <div className="grid subjects-grid">
                 {asignaturas.map((a, i) => (
                   <Reveal key={a.id} variant="up" delay={i * 70} className="subject-reveal">
-                    <SubjectCard asignatura={a} />
+                    <SubjectCard
+                      asignatura={a}
+                      progreso={progreso.porcentajeDeAsignatura(a.id)}
+                    />
                   </Reveal>
                 ))}
               </div>

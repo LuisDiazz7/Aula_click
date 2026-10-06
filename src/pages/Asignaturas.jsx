@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react'
 import { useAuth } from '../hooks/useAuth'
+import { useProgreso } from '../hooks/useProgreso'
 import { getAsignaturasPorCurso } from '../services/contentService'
 import SubjectCard from '../components/SubjectCard'
 import Loading from '../components/Loading'
 
 export default function Asignaturas() {
-  const { perfil } = useAuth()
+  const { perfil, usuarioDb } = useAuth()
+  const progreso = useProgreso(usuarioDb?.id)
   const [asignaturas, setAsignaturas] = useState([])
   const [cargando, setCargando] = useState(true)
 
@@ -36,7 +38,12 @@ export default function Asignaturas() {
       ) : (
         <div className="grid">
           {asignaturas.map((a) => (
-            <SubjectCard key={a.id} asignatura={a} cursoNombre={perfil?.cursos?.nombre} />
+            <SubjectCard
+              key={a.id}
+              asignatura={a}
+              cursoNombre={perfil?.cursos?.nombre}
+              progreso={progreso.porcentajeDeAsignatura(a.id)}
+            />
           ))}
         </div>
       )}
