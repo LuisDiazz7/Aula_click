@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useAuth } from '../hooks/useAuth'
 import { getEjerciciosDeTema, guardarResultado } from '../services/quizService'
+import { notificarProgresoActualizado } from '../services/progresoService'
 import Loading from './Loading'
 import { IconCheck, IconQuiz, IconX } from '../utils/icons'
 
@@ -40,7 +41,6 @@ function QuestionView({ pregunta, indice, seleccion, onSeleccionar }) {
             type="button"
             className={className(letter)}
             onClick={() => onSeleccionar(letter)}
-            disabled={contestada}
           >
             <span className="option-letter">{letter}</span>
             <span className="option-text">{pregunta[`alt_${letter.toLowerCase()}`]}</span>
@@ -177,7 +177,6 @@ export default function EjercitacionPanel({ idTema, onVolver }) {
   }
 
   function seleccionarAlternativa(letter) {
-    if (seleccion !== null) return
     setSeleccion(letter)
     setRespuestas((prev) => {
       const next = [...prev]
@@ -211,7 +210,10 @@ export default function EjercitacionPanel({ idTema, onVolver }) {
         tiempoSegundos: tiempo,
       })
       if (res?.error) setErrorGuardado(res.error)
-      else setGuardado(true)
+      else {
+        setGuardado(true)
+        notificarProgresoActualizado()
+      }
     }
   }
 

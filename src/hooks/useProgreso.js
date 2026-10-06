@@ -5,39 +5,45 @@ const INICIAL = { porAsignatura: {}, general: 0, ejerciciosCompletados: 0 }
 
 /**
  * Progreso real del usuario autenticado.
- * Se vuelve a consultar solo cuando se guarda un resultado nuevo.
+ * Se consulta una vez al entrar y se refresca solo cuando se guarda
+ * un resultado nuevo, sin necesidad de recargar la pagina.
  */
 export function useProgreso(idUsuario) {
   const [progreso, setProgreso] = useState(INICIAL)
   const [cargando, setCargando] = useState(Boolean(idUsuario))
+  const [pedido, setPedido] = useState(0)
 
-  const cargar = useCallback(async () => {
+  const recargar = useCallback(() => setPedido((n) => n + 1), [])
+
+  useEffect(() => {
+    let vigente = true
+
     if (!idUsuario) {
       setProgreso(INICIAL)
       setCargando(false)
-      return
+      return () => { vigente = false }
     }
 
-    const datos = await getProgresoPorAsignatura(idUsuario)
-    setProgreso({
-      porAsignatura: datos.porAsignatura || {},
-      general: datos.general ?? 0,
-      ejerciciosCompletados: datos.ejerciciosCompletados ?? 0,
+    setCargando(true)
+    getProgresoPorAsignatura(idUsuario).then((datos) => {
+      if (!vigente) return
+      setProgreso({
+        porAsignatura: datos.porAsignatura || {},
+        general: datos.general ?? 0,
+        ejerciciosCompletados: datos.ejerciciosCompletados ?? 0,
+      })
+      setCargando(false)
     })
-    setCargando(false)
-  }, [idUsuario])
 
-  useEffect(() => {
-    setCargando(Boolean(idUsuario))
-    cargar()
-  }, [cargar])
+    return () => { vigente = false }
+  }, [idUsuario, pedido])
 
-  useEffect(() => onProgresoActualizado(cargar), [cargar])
+  useEffect(() => onProgresoActualizado(recargar), [recargar])
 
   const porcentajeDeAsignatura = useCallback(
     (idAsignatura) => progreso.porAsignatura[idAsignatura]?.porcentaje ?? 0,
     [progreso.porAsignatura],
   )
 
-  return { ...progreso, cargando, recargar: cargar, porcentajeDeAsignatura }
+  return { ...progreso, cargando, recargar, porcentajeDeAsignatura }
 }

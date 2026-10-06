@@ -207,16 +207,16 @@ export default function Home() {
               />
               <StatCard
                 icon={IconPen}
-                value={conteo ?? 0}
+                value={progreso.ejerciciosCompletados}
                 label="Ejercicios completados"
                 accent="amber"
               />
               <StatCard
                 icon={IconGauge}
-                value={`${PROGRESO_GENERAL_MOCK}%`}
+                value={`${progreso.general}%`}
                 label="Progreso general"
                 accent="green"
-                bar={PROGRESO_GENERAL_MOCK}
+                bar={progreso.general}
               />
             </div>
           </section>
@@ -237,7 +237,10 @@ export default function Home() {
               <div className="grid subjects-grid">
                 {asignaturas.map((a, i) => (
                   <Reveal key={a.id} variant="up" delay={i * 70} className="subject-reveal">
-                    <SubjectCard asignatura={a} />
+                    <SubjectCard
+                      asignatura={a}
+                      progreso={progreso.porcentajeDeAsignatura(a.id)}
+                    />
                   </Reveal>
                 ))}
               </div>

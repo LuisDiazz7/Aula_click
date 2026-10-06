@@ -5,7 +5,7 @@ import { signOut } from '../services/authService'
 import { IconBot } from '../utils/icons'
 
 export default function Navbar() {
-  const { user, perfil } = useAuth()
+  const { user } = useAuth()
   const navigate = useNavigate()
   const [open, setOpen] = useState(false)
 
@@ -17,8 +17,6 @@ export default function Navbar() {
 
   const linkClass = ({ isActive }) =>
     isActive ? 'nav-link active' : 'nav-link'
-
-  const inicial = perfil?.nombre?.charAt(0)?.toUpperCase() || 'E'
 
   return (
     <header className="navbar">
@@ -57,12 +55,6 @@ export default function Navbar() {
               <NavLink to="/perfil" className={linkClass} onClick={() => setOpen(false)}>
                 Mi perfil
               </NavLink>
-              {perfil?.nombre ? (
-                <Link to="/perfil" className="nav-profile" onClick={() => setOpen(false)}>
-                  <span className="nav-avatar">{inicial}</span>
-                  <span className="nav-profile-name">Hola, {perfil.nombre.split(' ')[0]}</span>
-                </Link>
-              ) : null}
               <button className="btn btn-ghost btn-sm" onClick={handleLogout}>
                 Salir
               </button>
