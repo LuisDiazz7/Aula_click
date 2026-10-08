@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { useAuth } from '../hooks/useAuth'
 import { IconBot } from '../utils/icons'
-import { mockTutorResponse } from '../services/mockTutor'
+import { tutorResponse } from '../services/tutorService'
 import TutorSidebar from '../components/tutor/TutorSidebar'
 import ChatMessage from '../components/tutor/ChatMessage'
 import ChatInput from '../components/tutor/ChatInput'
@@ -33,8 +33,7 @@ export default function TutorIA() {
     setMensajes((actual) => [...actual, { id: siguienteId++, rol: 'user', texto: limpio }])
     setPensando(true)
 
-    // MOCK: respuesta simulada. Se reemplazará por Gemini desde mockTutor.js
-    const respuesta = await mockTutorResponse(limpio, { curso, asignatura })
+    const respuesta = await tutorResponse(limpio, { curso, asignatura })
 
     setMensajes((actual) => [
       ...actual,
@@ -117,7 +116,7 @@ export default function TutorIA() {
                     </button>
                   ))}
                 </div>
-                <p className="tutor-note">Respuestas simuladas temporalmente · Pronto conectaremos Gemini</p>
+                <p className="tutor-note">Conectado con Gemini 2.5 Flash-Lite</p>
               </div>
             ) : (
               <>
