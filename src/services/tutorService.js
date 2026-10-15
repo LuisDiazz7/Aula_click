@@ -1,61 +1,45 @@
 ﻿// ============================================================================
-// tutorService.js — TUTOR IA CON GEMINI
+// tutorService.js — TUTOR IA (llama a la Edge Function "tutor" de Supabase)
+// La clave de Gemini vive como secreto del servidor, nunca en el frontend.
 // ============================================================================
 
-const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY
-const MODEL = 'gemini-2.5-flash-lite'
+import { supabase } from './supabase'
+import {
+  FunctionsHttpError,
+  FunctionsFetchError,
+  FunctionsRelayError,
+} from '@supabase/supabase-js'
 
-const SYSTEM_PROMPT = `Eres un tutor IA educativo para estudiantes de secundaria/chile o español general.
+const DEFAULT_ACTIONS = ['Dame una pista', 'Explícalo más fácil', 'Practiquemos']
 
-Tu objetivo PRINCIPAL: AYUDAR A QUE EL ESTUDIANTE APRENDA, NO darle la respuesta directa.
+function conAcciones(respuesta) {
+  const text =
+    typeof respuesta?.text === 'string' && respuesta.text.trim()
+      ? respuesta.text
+      : 'Te ayudo paso a paso. ¿Por dónde quieres empezar?'
 
-Reglas obligatorias:
-- Explica paso a paso, siempre descomponiendo en partes pequeñas.
-- Usa lenguaje claro, sencillo y motivador.
-- Nunca des la solución completa de un ejercicio a menos que el estudiante te lo pida explícitamente después de haber intentado y tú lo hayas guiado.
-- Haz preguntas para guiar su razonamiento.
-- Sé empático y paciente.
-- Responde SIEMPRE en español neutro y correcto.
+  const acciones = Array.isArray(respuesta?.actions)
+    ? respuesta.actions.map((a) => String(a).trim()).filter(Boolean).slice(0, 3)
+    : []
 
-Formato de respuesta OBLIGATORIO (JSON estricto):
-Debes responder ÚNICAMENTE con un objeto JSON válido con esta estructura exacta:
-
-{
-  "text": "Explicación o respuesta detallada en español, con saltos de línea cuando corresponda.",
-  "actions": ["Acción sugerida 1", "Acción sugerida 2", "Acción sugerida 3"]
+  return { text, actions: acciones.length ? acciones : DEFAULT_ACTIONS }
 }
 
-Requisitos para actions:
-- Debe ser un array con 1 a 3 acciones como máximo.
-- Usa frases cortas, naturales y útiles para guiar al estudiante (ej.: "Dame una pista", "Dame un ejemplo", "Practiquemos", "Ya lo resolví", "Sigo sin entender").
-- No uses emojis, markdown enriquecido innecesario o texto fuera del JSON.
-
-Instrucciones de enseñanza:
-- Si pide pista: dale una pista, NO la respuesta.
-- Si pide que lo expliques más fácil: usa analogías simples de la vida diaria.
-- Si pide ejemplo: pon un ejemplo concreto y pequeño.
-- Si pide practicar: propón un mini ejercicio para practicar paso a paso.
-- Siempre termina invitando al estudiante a continuar o decir por dónde quiere partir.
-
-Contexto que recibirás: { message, context: { curso, asignatura } }
-Usa el contexto (curso/asignatura) para adaptar tu explicación al nivel adecuado.`
-
-function buildUserPrompt(message, context = {}) {
-  const { curso = '', asignatura = '' } = context
-  return `Mensaje del estudiante: "${message}"
-
-Contexto:
-- Curso: ${curso || 'No especificado'}
-- Asignatura: ${asignatura || 'No especificada'}
-
-Responde siguiendo estrictamente el formato JSON indicado.`
+async function leerMensajeDeError(error) {
+  if (error instanceof FunctionsHttpError || error instanceof FunctionsRelayError) {
+    try {
+      const cuerpo = await error.context.json()
+      if (cuerpo && typeof cuerpo.message === 'string' && cuerpo.message.trim()) {
+        return cuerpo.message
+      }
+    } catch {
+      // sin cuerpo JSON legible
+    }
+  }
+  return null
 }
 
 export async function tutorResponse(message, context = {}) {
-  if (!GEMINI_API_KEY) {
-    throw new Error('Falta VITE_GEMINI_API_KEY en .env')
-  }
-
   const limpio = String(message || '').trim()
   if (!limpio) {
     return {
@@ -65,72 +49,43 @@ export async function tutorResponse(message, context = {}) {
   }
 
   try {
-    const res = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent?key=${GEMINI_API_KEY}`,
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
+    const { data, error } = await supabase.functions.invoke('tutor', {
+      body: {
+        message: limpio,
+        context: {
+          curso: String(context?.curso ?? ''),
+          asignatura: String(context?.asignatura ?? ''),
         },
-        body: JSON.stringify({
-          systemInstruction: {
-            parts: [{ text: SYSTEM_PROMPT }],
-          },
-          contents: [
-            {
-              parts: [{ text: buildUserPrompt(limpio, context) }],
-            },
-          ],
-          generationConfig: {
-            temperature: 0.2,
-            topP: 0.95,
-            topK: 40,
-            maxOutputTokens: 1024,
-            responseMimeType: 'application/json',
-          },
-        }),
+      },
+    })
+
+    if (error) {
+      console.error('Error al invocar la función tutor:', error)
+      if (error instanceof FunctionsFetchError) {
+        return {
+          text: 'No pudimos conectar con el Tutor IA. Revisa tu conexión e inténtalo de nuevo.',
+          actions: ['Reintentar', 'Dame una pista'],
+        }
       }
-    )
-
-    if (!res.ok) {
-      const err = await res.text()
-      console.error('Error Gemini API:', err)
-      throw new Error('No se pudo conectar con el Tutor IA')
-    }
-
-    const data = await res.json()
-    const candidato = data?.candidates?.[0]
-    const parte = candidato?.content?.parts?.[0]?.text
-
-    if (!parte) {
-      throw new Error('Respuesta vacía de Gemini')
-    }
-
-    let parsed
-    try {
-      parsed = JSON.parse(parte)
-    } catch (e) {
-      console.error('Respuesta no JSON:', parte)
-      parsed = {
-        text: parte.replace(/```json|```/g, '').trim(),
-        actions: ['Dame una pista', 'Explícalo más fácil', 'Practiquemos'],
+      const mensaje = await leerMensajeDeError(error)
+      return {
+        text: mensaje || 'El Tutor IA no está disponible en este momento. Inténtalo de nuevo.',
+        actions: ['Reintentar', 'Dame una pista'],
       }
     }
 
-    if (!parsed.text || !Array.isArray(parsed.actions)) {
-      parsed = {
-        text: parsed.text || 'Te ayudo paso a paso. ¿Por dónde quieres empezar?',
-        actions: Array.isArray(parsed.actions) ? parsed.actions.slice(0, 3) : ['Dame una pista', 'Explícalo más fácil', 'Practiquemos'],
+    if (!data?.ok) {
+      return {
+        text: data?.message || 'El Tutor IA no está disponible en este momento. Inténtalo de nuevo.',
+        actions: data?.retryable ? ['Reintentar', 'Dame una pista'] : DEFAULT_ACTIONS,
       }
     }
 
-    parsed.actions = parsed.actions.slice(0, 3).map((a) => String(a).trim())
-
-    return parsed
+    return conAcciones(data)
   } catch (error) {
-    console.error('Error en tutorResponse:', error)
+    console.error('Error inesperado en tutorResponse:', error)
     return {
-      text: 'Ocurrió un error al conectar con Gemini. Inténtalo de nuevo en unos segundos.',
+      text: 'Ocurrió un error inesperado. Inténtalo de nuevo en unos segundos.',
       actions: ['Reintentar', 'Dame una pista'],
     }
   }
