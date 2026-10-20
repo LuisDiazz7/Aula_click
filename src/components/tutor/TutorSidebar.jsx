@@ -1,14 +1,20 @@
-import { IconPlus, IconClock } from '../../utils/icons'
-
-const CONVERSACIONES_MOCK = [
-  'Funciones cuadráticas',
-  'Distribución normal',
-  'Revolución Industrial',
-]
+import { IconPlus, IconClock, IconTrash } from '../../utils/icons'
 
 const ASIGNATURAS = ['Matemáticas', 'Lenguaje', 'Inglés', 'Ciencias', 'Historia']
 
-export default function TutorSidebar({ open, onClose, onNueva, curso, asignatura, onAsignatura }) {
+export default function TutorSidebar({
+  open,
+  onClose,
+  onNueva,
+  onSeleccionar,
+  onEliminar,
+  conversaciones = [],
+  activaId = null,
+  cargando = false,
+  curso,
+  asignatura,
+  onAsignatura,
+}) {
   return (
     <>
       <div
@@ -17,22 +23,55 @@ export default function TutorSidebar({ open, onClose, onNueva, curso, asignatura
         aria-hidden="true"
       ></div>
 
-      <aside className={`tutor-side ${open ? 'open' : ''}`} aria-label="Historial de conversaciones del Tutor IA">
+      <aside
+        className={`tutor-side ${open ? 'open' : ''}`}
+        aria-label="Historial de conversaciones del Tutor IA"
+      >
         <button type="button" className="tutor-new" onClick={onNueva}>
           <IconPlus aria-hidden="true" />
           Nueva conversación
         </button>
 
-        <div className="tutor-side-block">
+        <div className="tutor-side-block tutor-side-history">
           <h2 className="tutor-side-title">Conversaciones</h2>
-          <ul className="tutor-history">
-            {CONVERSACIONES_MOCK.map((c) => (
-              <li key={c} className="tutor-history-item" title="Próximamente">
-                <IconClock aria-hidden="true" />
-                <span>{c}</span>
-              </li>
-            ))}
-          </ul>
+          {cargando && conversaciones.length === 0 ? (
+            <p className="tutor-side-empty">Cargando…</p>
+          ) : conversaciones.length === 0 ? (
+            <p className="tutor-side-empty">Tus chats aparecerán aquí.</p>
+          ) : (
+            <ul className="tutor-history">
+              {conversaciones.map((c) => {
+                const titulo = c.titulo || 'Nueva conversación'
+                const activa = c.id === activaId
+                return (
+                  <li
+                    key={c.id}
+                    className={`tutor-history-item ${activa ? 'active' : ''}`}
+                  >
+                    <button
+                      type="button"
+                      className="tutor-history-btn"
+                      onClick={() => onSeleccionar(c)}
+                      aria-current={activa ? 'true' : undefined}
+                      title={titulo}
+                    >
+                      <IconClock aria-hidden="true" />
+                      <span>{titulo}</span>
+                    </button>
+                    <button
+                      type="button"
+                      className="tutor-history-delete"
+                      onClick={() => onEliminar(c)}
+                      aria-label={`Eliminar conversación: ${titulo}`}
+                      title="Eliminar conversación"
+                    >
+                      <IconTrash aria-hidden="true" />
+                    </button>
+                  </li>
+                )
+              })}
+            </ul>
+          )}
         </div>
 
         <div className="tutor-side-block tutor-side-context">
@@ -58,7 +97,7 @@ export default function TutorSidebar({ open, onClose, onNueva, curso, asignatura
             ))}
           </select>
           <p className="tutor-context-note">
-            Esta información se enviará automáticamente al Tutor IA cuando conectemos Gemini.
+            Esta información se enviará automáticamente al Tutor IA para adaptar sus explicaciones.
           </p>
         </div>
       </aside>

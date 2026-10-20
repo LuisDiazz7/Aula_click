@@ -5,6 +5,7 @@ const PRIMARY_MODEL = Deno.env.get("GEMINI_MODEL") ?? "gemini-3.5-flash-lite";
 const FALLBACK_MODEL = "gemini-flash-lite-latest";
 const REQUEST_TIMEOUT_MS = 30000;
 const MAX_MESSAGE_LENGTH = 4000;
+const MAX_HISTORY_TURNS = 20;
 
 const CORS_HEADERS: Record<string, string> = {
   "Access-Control-Allow-Origin": "*",
@@ -15,7 +16,7 @@ const CORS_HEADERS: Record<string, string> = {
 
 const DEFAULT_ACTIONS = ["Dame una pista", "Explícalo más fácil", "Practiquemos"];
 
-const SYSTEM_PROMPT = `Eres un tutor IA educativo para estudiantes de secundaria/chile o español general.
+const SYSTEM_PROMPT_BASE = `Eres un tutor IA educativo para estudiantes de secundaria chilena, enfocado en la preparación de la PAES.
 
 Tu objetivo PRINCIPAL: AYUDAR A QUE EL ESTUDIANTE APRENDA, NO darle la respuesta directa.
 
@@ -26,6 +27,8 @@ Reglas obligatorias:
 - Haz preguntas para guiar su razonamiento.
 - Sé empático y paciente.
 - Responde SIEMPRE en español neutro y correcto.
+- Usa el lenguaje y la profundidad propios del nivel del estudiante.
+- Conecta los temas con el estilo de preguntas PAES cuando tenga sentido.
 
 Formato de respuesta OBLIGATORIO (JSON estricto):
 Debes responder ÚNICAMENTE con un objeto JSON válido con esta estructura exacta:
@@ -45,10 +48,71 @@ Instrucciones de enseñanza:
 - Si pide que lo expliques más fácil: usa analogías simples de la vida diaria.
 - Si pide ejemplo: pon un ejemplo concreto y pequeño.
 - Si pide practicar: propón un mini ejercicio para practicar paso a paso.
-- Siempre termina invitando al estudiante a continuar o decir por dónde quiere partir.
+- Continúa siempre el hilo de la conversación; nunca ignores lo que ya se habló.`;
 
-Contexto que recibirás: { message, context: { curso, asignatura } }
-Usa el contexto (curso/asignatura) para adaptar tu explicación al nivel adecuado.`;
+type ChatTurn = { rol?: unknown; role?: unknown; contenido?: unknown; content?: unknown };
+
+// Saludo solo al inicio: nunca en mitad de la conversación.
+function buildGreetingInstruction(tieneHistorial: boolean): string {
+  if (tieneHistorial) {
+    return `CONVERSACIÓN EN CURSO (ya hay mensajes previos):
+- Empieza tu respuesta DIRECTAMENTE con el contenido. NO saludes.
+- Prohibido empezar con "Hola", "¡Hola!", "Buenas", "Claro que sí", "Por supuesto", "¡Genial!", "Entiendo" ni cualquier otra frase de relleno o presentación.
+- NO vuelvas a presentarte ni repitas el mensaje de bienvenida.
+- Continúa el hilo de forma natural, usando lo que ya se habló.
+- Acciones (botones): INCLUYE sugerencias SOLO si el estudiante aún no dice el tema (por ejemplo, solo mandó un saludo o "hola"). Si ya explicó su duda, las acciones deben ser pasos de seguimiento concretos sobre ese tema; nunca saludos ni presentación.`;
+  }
+  return `PRIMER MENSAJE de la conversación:
+- Puedes saludar UNA sola vez (una línea breve) antes de ayudar.
+- Puedes incluir 1 a 3 acciones de bienvenida para sugerir por dónde partir.`;
+}
+
+// Cómo adaptar la respuesta al nivel del alumno (PAES).
+function buildNivelInstruction(nivel: string): string {
+  if (!nivel) {
+    return "- Nivel: no especificado (usa un lenguaje de secundaria general).";
+  }
+  return `- El estudiante cursa ${nivel} y se está preparando para la PAES de esa asignatura.`;
+}
+
+type GeminiTurn = { role: "user" | "model"; text: string };
+
+// Convierte el historial guardado en turns de Gemini (sin saltos de rol consecutivo).
+function buildContents(history: ChatTurn[], message: string): GeminiTurn[] {
+  const turns: GeminiTurn[] = [];
+
+  for (const item of history) {
+    const rol = String(item?.rol ?? item?.role ?? "").trim();
+    const texto = String(item?.contenido ?? item?.content ?? "").trim();
+    if (!texto) continue;
+    const role: "user" | "model" = rol === "assistant" ? "model" : "user";
+    const last = turns[turns.length - 1];
+    if (last && last.role === role) {
+      last.text += "\n" + texto;
+    } else {
+      turns.push({ role, text: texto });
+    }
+  }
+
+  const ultimo = turns[turns.length - 1];
+  if (ultimo && ultimo.role === "user") {
+    ultimo.text += "\n\n" + message;
+  } else {
+    turns.push({ role: "user", text: message });
+  }
+
+  return turns;
+}
+
+type TutorContext = { curso: string; asignatura: string; nivel: string };
+
+// Contexto del alumno (nivel/curso/asignatura) para adaptar la respuesta a la PAES.
+function buildContextBlock(context: TutorContext): string {
+  return `Contexto del estudiante:
+${buildNivelInstruction(context.nivel)}
+- Curso: ${context.curso || "No especificado"}
+- Asignatura: ${context.asignatura || "No especificada"}`;
+}
 
 type GeminiResult = { ok: boolean; status: number; data: unknown; raw: string };
 
@@ -66,19 +130,6 @@ function fail(
   retryable = false,
 ): Response {
   return jsonResponse({ ok: false, error, message, retryable }, status);
-}
-
-function buildUserPrompt(
-  message: string,
-  context: { curso: string; asignatura: string },
-): string {
-  return `Mensaje del estudiante: "${message}"
-
-Contexto:
-- Curso: ${context.curso || "No especificado"}
-- Asignatura: ${context.asignatura || "No especificada"}
-
-Responde siguiendo estrictamente el formato JSON indicado.`;
 }
 
 function normalizeReply(parsed: unknown) {
@@ -157,7 +208,8 @@ Deno.serve(async (req: Request) => {
 
   let body: {
     message?: unknown;
-    context?: { curso?: unknown; asignatura?: unknown };
+    history?: ChatTurn[];
+    context?: { curso?: unknown; asignatura?: unknown; nivel?: unknown };
   };
   try {
     body = await req.json();
@@ -166,20 +218,42 @@ Deno.serve(async (req: Request) => {
   }
 
   const message = String(body?.message ?? "").trim().slice(0, MAX_MESSAGE_LENGTH);
-  const context = {
+  const context: TutorContext = {
     curso: String(body?.context?.curso ?? "").trim().slice(0, 120),
     asignatura: String(body?.context?.asignatura ?? "").trim().slice(0, 120),
+    nivel: String(body?.context?.nivel ?? "").trim().slice(0, 120),
   };
+
+  const rawHistory = Array.isArray(body?.history) ? body.history : [];
+  const history = rawHistory
+    .slice(-MAX_HISTORY_TURNS)
+    .map((item) => ({
+      rol: String(item?.rol ?? item?.role ?? "").trim(),
+      contenido: String(item?.contenido ?? item?.content ?? "").trim().slice(
+        0,
+        MAX_MESSAGE_LENGTH,
+      ),
+    }))
+    .filter((item) => item.contenido);
 
   if (!message) {
     return fail("empty_message", "Escribe tu duda y te ayudo paso a paso.", 400);
   }
 
+  const systemPrompt = [
+    SYSTEM_PROMPT_BASE,
+    buildContextBlock(context),
+    buildGreetingInstruction(history.length > 0),
+  ].join("\n\n");
+
+  const contents = buildContents(history, message).map((turn) => ({
+    role: turn.role,
+    parts: [{ text: turn.text }],
+  }));
+
   const payload = {
-    systemInstruction: { parts: [{ text: SYSTEM_PROMPT }] },
-    contents: [
-      { role: "user", parts: [{ text: buildUserPrompt(message, context) }] },
-    ],
+    systemInstruction: { parts: [{ text: systemPrompt }] },
+    contents,
     generationConfig: {
       temperature: 0.2,
       topP: 0.95,
