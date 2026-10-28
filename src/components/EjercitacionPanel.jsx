@@ -4,6 +4,7 @@ import { getEjerciciosDeTema, guardarResultado } from '../services/quizService'
 import { notificarProgresoActualizado } from '../services/progresoService'
 import Loading from './Loading'
 import { IconCheck, IconQuiz, IconX } from '../utils/icons'
+import TutorPostEjercicio from './tutor/TutorPostEjercicio'
 
 const TOTAL_PREGUNTAS = 5
 
@@ -51,7 +52,7 @@ function QuestionView({ pregunta, indice, seleccion, onSeleccionar }) {
   )
 }
 
-function ResultView({ respuestas, preguntas, puntaje, total, tiempoSegundos, onReintentar, onVolver }) {
+function ResultView({ respuestas, preguntas, puntaje, total, tiempoSegundos, onReintentar, onVolver, tema }) {
   const correctas = respuestas.filter((r) => r !== null).reduce(
     (acc, r, i) => acc + (r === preguntas[i].respuesta_correcta ? 1 : 0),
     0,
@@ -99,6 +100,8 @@ function ResultView({ respuestas, preguntas, puntaje, total, tiempoSegundos, onR
         })}
       </div>
 
+      <TutorPostEjercicio preguntas={preguntas} respuestas={respuestas} tema={tema} />
+
       <div className="quiz-actions">
         <button className="btn btn-secondary" onClick={onReintentar}>Reintentar</button>
         {onVolver && <button className="btn btn-primary" onClick={onVolver}>Volver al tema</button>}
@@ -107,7 +110,7 @@ function ResultView({ respuestas, preguntas, puntaje, total, tiempoSegundos, onR
   )
 }
 
-export default function EjercitacionPanel({ idTema, onVolver }) {
+export default function EjercitacionPanel({ idTema, onVolver, tema }) {
   const { usuarioDb } = useAuth()
 
   const [preguntas, setPreguntas] = useState([])
@@ -249,6 +252,7 @@ export default function EjercitacionPanel({ idTema, onVolver }) {
           tiempoSegundos={segundos}
           onReintentar={comenzar}
           onVolver={onVolver}
+          tema={tema}
         />
       </div>
     )
