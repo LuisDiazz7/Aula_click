@@ -117,7 +117,7 @@ export default function Registro() {
           <span id="terminos-texto">
             <label htmlFor="terminos">Acepto los</label>{' '}
             <a href="/terminos">Términos de Servicio</a> y la{' '}
-            <a href="/privacidad">Política de Privacidad</a> de Aula Click.
+            <a href="/privacidad" target="_blank" rel="noreferrer">Política de Privacidad</a> de Aula Click.
           </span>
         </div>
 

@@ -5,7 +5,6 @@ import { iconMap, IconPlay, IconDoc, IconQuiz } from '../utils/icons'
 import Loading from '../components/Loading'
 import Reveal from '../components/Reveal'
 import AnimatedCounter from '../components/AnimatedCounter'
-import IntroCine from '../components/IntroCine'
 
 const ASIGNATURAS = [
   { icon: 'lenguaje', nombre: 'Lenguaje y Comunicación' },
@@ -43,7 +42,6 @@ export default function Landing() {
   const heroCopyRef = useRef(null)
   const heroVisualRef = useRef(null)
   const [scrolled, setScrolled] = useState(false)
-  const [introActiva, setIntroActiva] = useState(true)
 
   useEffect(() => {
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -78,29 +76,11 @@ export default function Landing() {
     }
   }, [])
 
-  // Al terminar la intro, la página se monta desde cero y vuelve al inicio para
-  // que se reproduzcan sus animaciones de entrada (hero, dashboard y reveals).
-  useEffect(() => {
-    if (introActiva) return
-    const alInicio = () => window.scrollTo(0, 0)
-    alInicio()
-    const id = requestAnimationFrame(alInicio)
-    return () => cancelAnimationFrame(id)
-  }, [introActiva])
-
   if (loading) return <Loading text="Cargando..." />
   if (user) return <Navigate to={perfil ? '/inicio' : '/crear-perfil'} replace />
 
-  // La intro ocupa toda la pantalla; al finalizarse se desmonta y recién ahí se
-  // dibuja la página real, con sus animaciones de entrada.
-  const mostrarLanding = !introActiva
-
   return (
     <div className="landing">
-      {!mostrarLanding && <IntroCine onFinalizar={() => setIntroActiva(false)} />}
-
-      {mostrarLanding && (
-        <>
       <header className={`landing-header${scrolled ? ' landing-header--scrolled' : ''}`}>
         <div className="container landing-nav">
           <Link to="/" className="brand">
@@ -286,11 +266,10 @@ export default function Landing() {
             <span className="brand-name">Aula Click</span>
           </div>
           <p>Plataforma educativa para estudiantes de enseñanza media.</p>
+          <p><Link to="/privacidad">Política de Privacidad y Seguridad</Link></p>
           <p className="muted">© {new Date().getFullYear()} Aula Click. Todos los derechos reservados.</p>
         </Reveal>
       </footer>
-        </>
-      )}
     </div>
   )
 }

@@ -1,0 +1,192 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [8 0 R 10 0 R 12 0 R] /Count 3 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Symbol >>
+endobj
+6 0 obj
+<< /Title (Ejercicios: Probabilidad condicional) /Producer (Aula Click) >>
+endobj
+7 0 obj
+<< /Length 4067 >>
+stream
+0.310 0.270 0.900 rg 0 682 612 110 re f
+BT 0.880 0.900 1.000 rg 56.00 746.00 Td /F1 10 Tf (MATEM\301TICA \267 EJERCITACI\323N TIPO PAES) Tj ET
+BT 1.000 1.000 1.000 rg 56.00 720.00 Td /F2 20 Tf (Ejercicios: Probabilidad condicional) Tj ET
+BT 0.390 0.450 0.550 rg 56.00 635.50 Td /F2 10 Tf (M2 \267 Probabilidad y estad\355stica \267 Probabilidad condicional) Tj ET
+0.950 0.950 1.000 rg 56 557.825 500 73.67500000000001 re f
+0.310 0.270 0.900 rg 56 557.825 3 73.67500000000001 re f
+BT 0.310 0.270 0.900 rg 70.00 604.27 Td /F2 10.5 Tf (Instrucciones) Tj ET
+BT 0.060 0.090 0.160 rg 70.00 585.05 Td /F1 10.5 Tf (Este documento contiene 8 preguntas de selecci\363n m\372ltiple con 4 alternativas. Solo una es correcta.) Tj ET
+BT 0.060 0.090 0.160 rg 70.00 569.82 Td /F1 10.5 Tf (Resp\363ndelas sin mirar la pauta y luego revisa tus resultados en la \372ltima p\341gina.) Tj ET
+BT 0.310 0.270 0.900 rg 56.00 515.53 Td /F2 14 Tf (Preguntas) Tj ET
+BT 0.310 0.270 0.900 rg 56.00 493.58 Td /F2 11 Tf (1.) Tj ET
+BT 0.060 0.090 0.160 rg 78.00 493.58 Td /F1 11 Tf (En un curso de 40 estudiantes, 25 practican deporte \(15 de ellos son mujeres\) y 15 no practican) Tj ET
+BT 0.060 0.090 0.160 rg 78.00 477.63 Td /F1 11 Tf (\(5 de ellos son mujeres\). Si se elige al azar un estudiante que practica deporte, \277cu\341l es la) Tj ET
+BT 0.060 0.090 0.160 rg 78.00 461.68 Td /F1 11 Tf (probabilidad de que sea mujer?) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 442.73 Td /F2 11 Tf (A\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 442.73 Td /F1 11 Tf (15/40) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 426.78 Td /F2 11 Tf (B\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 426.78 Td /F1 11 Tf (3/8) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 410.83 Td /F2 11 Tf (C\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 410.83 Td /F1 11 Tf (1/2) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 394.88 Td /F2 11 Tf (D\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 394.88 Td /F1 11 Tf (3/5) Tj ET
+BT 0.310 0.270 0.900 rg 56.00 364.93 Td /F2 11 Tf (2.) Tj ET
+BT 0.060 0.090 0.160 rg 78.00 364.93 Td /F1 11 Tf (En un curso de 40 estudiantes, 25 practican deporte \(15 de ellos son mujeres\) y 15 no practican) Tj ET
+BT 0.060 0.090 0.160 rg 78.00 348.98 Td /F1 11 Tf (\(5 de ellos son mujeres\). Si se elige al azar una mujer del curso, \277cu\341l es la probabilidad de que) Tj ET
+BT 0.060 0.090 0.160 rg 78.00 333.03 Td /F1 11 Tf (practique deporte?) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 314.08 Td /F2 11 Tf (A\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 314.08 Td /F1 11 Tf (3/4) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 298.13 Td /F2 11 Tf (B\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 298.13 Td /F1 11 Tf (15/40) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 282.18 Td /F2 11 Tf (C\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 282.18 Td /F1 11 Tf (1/4) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 266.23 Td /F2 11 Tf (D\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 266.23 Td /F1 11 Tf (3/5) Tj ET
+BT 0.310 0.270 0.900 rg 56.00 236.28 Td /F2 11 Tf (3.) Tj ET
+BT 0.060 0.090 0.160 rg 78.00 236.28 Td /F1 11 Tf (En un curso de 40 estudiantes, 25 practican deporte \(15 de ellos son mujeres\) y 15 no practican) Tj ET
+BT 0.060 0.090 0.160 rg 78.00 220.33 Td /F1 11 Tf (\(5 de ellos son mujeres\). Si se elige al azar un estudiante que no practica deporte, \277cu\341l es la) Tj ET
+BT 0.060 0.090 0.160 rg 78.00 204.38 Td /F1 11 Tf (probabilidad de que sea hombre?) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 185.43 Td /F2 11 Tf (A\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 185.43 Td /F1 11 Tf (1/4) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 169.48 Td /F2 11 Tf (B\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 169.48 Td /F1 11 Tf (2/3) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 153.53 Td /F2 11 Tf (C\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 153.53 Td /F1 11 Tf (1/3) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 137.58 Td /F2 11 Tf (D\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 137.58 Td /F1 11 Tf (10/40) Tj ET
+0.880 0.900 0.940 RG 0.8 w 56 44 m 556 44 l S
+BT 0.390 0.450 0.550 rg 56.00 30.00 Td /F1 8.5 Tf (Aula Click \267 Material de preparaci\363n PAES) Tj ET
+BT 0.390 0.450 0.550 rg 503.55 30.00 Td /F1 8.5 Tf (P\341gina 1 de 3) Tj ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 7 0 R /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> >>
+endobj
+9 0 obj
+<< /Length 4109 >>
+stream
+BT 0.390 0.450 0.550 rg 56.00 756.00 Td /F1 9 Tf (Ejercicios: Probabilidad condicional) Tj ET
+0.880 0.900 0.940 RG 0.8 w 56 748 m 556 748 l S
+BT 0.310 0.270 0.900 rg 56.00 706.05 Td /F2 11 Tf (4.) Tj ET
+BT 0.060 0.090 0.160 rg 78.00 706.05 Td /F1 11 Tf (Si P\(A ) Tj /F3 11 Tf (\307) Tj /F1 11 Tf ( B\) = 0,2 y P\(B\) = 0,4, \277cu\341l es P\(A|B\)?) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 687.10 Td /F2 11 Tf (A\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 687.10 Td /F1 11 Tf (0,2) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 671.15 Td /F2 11 Tf (B\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 671.15 Td /F1 11 Tf (0,08) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 655.20 Td /F2 11 Tf (C\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 655.20 Td /F1 11 Tf (0,8) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 639.25 Td /F2 11 Tf (D\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 639.25 Td /F1 11 Tf (0,5) Tj ET
+BT 0.310 0.270 0.900 rg 56.00 609.30 Td /F2 11 Tf (5.) Tj ET
+BT 0.060 0.090 0.160 rg 78.00 609.30 Td /F1 11 Tf (Una bolsa tiene 4 bolitas rojas y 6 azules. Se extraen dos sin reposici\363n. \277Cu\341l es la probabilidad) Tj ET
+BT 0.060 0.090 0.160 rg 78.00 593.35 Td /F1 11 Tf (de que ambas sean rojas?) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 574.40 Td /F2 11 Tf (A\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 574.40 Td /F1 11 Tf (1/5) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 558.45 Td /F2 11 Tf (B\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 558.45 Td /F1 11 Tf (4/25) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 542.50 Td /F2 11 Tf (C\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 542.50 Td /F1 11 Tf (4/15) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 526.55 Td /F2 11 Tf (D\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 526.55 Td /F1 11 Tf (2/15) Tj ET
+BT 0.310 0.270 0.900 rg 56.00 496.60 Td /F2 11 Tf (6.) Tj ET
+BT 0.060 0.090 0.160 rg 78.00 496.60 Td /F1 11 Tf (Se lanza un dado y se sabe que sali\363 un n\372mero par. \277Cu\341l es la probabilidad de que sea 6?) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 477.65 Td /F2 11 Tf (A\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 477.65 Td /F1 11 Tf (1/3) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 461.70 Td /F2 11 Tf (B\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 461.70 Td /F1 11 Tf (1/6) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 445.75 Td /F2 11 Tf (C\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 445.75 Td /F1 11 Tf (2/3) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 429.80 Td /F2 11 Tf (D\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 429.80 Td /F1 11 Tf (1/2) Tj ET
+BT 0.310 0.270 0.900 rg 56.00 399.85 Td /F2 11 Tf (7.) Tj ET
+BT 0.060 0.090 0.160 rg 78.00 399.85 Td /F1 11 Tf (Si A y B son independientes, P\(A|B\) es igual a:) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 380.90 Td /F2 11 Tf (A\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 380.90 Td /F1 11 Tf (P\(B\)) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 364.95 Td /F2 11 Tf (B\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 364.95 Td /F1 11 Tf (0) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 349.00 Td /F2 11 Tf (C\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 349.00 Td /F1 11 Tf (P\(A\)\267P\(B\)) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 333.05 Td /F2 11 Tf (D\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 333.05 Td /F1 11 Tf (P\(A\)) Tj ET
+BT 0.310 0.270 0.900 rg 56.00 303.10 Td /F2 11 Tf (8.) Tj ET
+BT 0.060 0.090 0.160 rg 78.00 303.10 Td /F1 11 Tf (Una familia tiene dos hijos. Si se sabe que al menos uno es mujer, \277cu\341l es la probabilidad de) Tj ET
+BT 0.060 0.090 0.160 rg 78.00 287.15 Td /F1 11 Tf (que ambos sean mujeres?) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 268.20 Td /F2 11 Tf (A\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 268.20 Td /F1 11 Tf (1/3) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 252.25 Td /F2 11 Tf (B\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 252.25 Td /F1 11 Tf (1/2) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 236.30 Td /F2 11 Tf (C\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 236.30 Td /F1 11 Tf (1/4) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 220.35 Td /F2 11 Tf (D\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 220.35 Td /F1 11 Tf (2/3) Tj ET
+0.880 0.900 0.940 RG 0.8 w 56 44 m 556 44 l S
+BT 0.390 0.450 0.550 rg 56.00 30.00 Td /F1 8.5 Tf (Aula Click \267 Material de preparaci\363n PAES) Tj ET
+BT 0.390 0.450 0.550 rg 503.55 30.00 Td /F1 8.5 Tf (P\341gina 2 de 3) Tj ET
+endstream
+endobj
+10 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 9 0 R /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> >>
+endobj
+11 0 obj
+<< /Length 1819 >>
+stream
+BT 0.390 0.450 0.550 rg 56.00 756.00 Td /F1 9 Tf (Ejercicios: Probabilidad condicional) Tj ET
+0.880 0.900 0.940 RG 0.8 w 56 748 m 556 748 l S
+BT 0.310 0.270 0.900 rg 56.00 691.70 Td /F2 14 Tf (Pauta de respuestas) Tj ET
+BT 0.060 0.090 0.160 rg 56.00 669.75 Td /F2 11 Tf (1. Alternativa D) Tj ET
+BT 0.200 0.250 0.330 rg 72.00 654.52 Td /F1 10.5 Tf (15 mujeres de 25 deportistas.) Tj ET
+BT 0.060 0.090 0.160 rg 56.00 632.57 Td /F2 11 Tf (2. Alternativa A) Tj ET
+BT 0.200 0.250 0.330 rg 72.00 617.35 Td /F1 10.5 Tf (Hay 20 mujeres y 15 practican deporte.) Tj ET
+BT 0.060 0.090 0.160 rg 56.00 595.40 Td /F2 11 Tf (3. Alternativa B) Tj ET
+BT 0.200 0.250 0.330 rg 72.00 580.17 Td /F1 10.5 Tf (10 hombres de 15 estudiantes.) Tj ET
+BT 0.060 0.090 0.160 rg 56.00 558.22 Td /F2 11 Tf (4. Alternativa D) Tj ET
+BT 0.200 0.250 0.330 rg 72.00 543.00 Td /F1 10.5 Tf (0,2/0,4 = 0,5.) Tj ET
+BT 0.060 0.090 0.160 rg 56.00 521.05 Td /F2 11 Tf (5. Alternativa D) Tj ET
+BT 0.200 0.250 0.330 rg 72.00 505.82 Td /F1 10.5 Tf (\(4/10\)\267\(3/9\) = 12/90 = 2/15.) Tj ET
+BT 0.060 0.090 0.160 rg 56.00 483.87 Td /F2 11 Tf (6. Alternativa A) Tj ET
+BT 0.200 0.250 0.330 rg 72.00 468.65 Td /F1 10.5 Tf (Los casos posibles se reducen a {2, 4, 6}.) Tj ET
+BT 0.060 0.090 0.160 rg 56.00 446.70 Td /F2 11 Tf (7. Alternativa D) Tj ET
+BT 0.200 0.250 0.330 rg 72.00 431.47 Td /F1 10.5 Tf (Saber que ocurri\363 B no cambia la probabilidad de A.) Tj ET
+BT 0.060 0.090 0.160 rg 56.00 409.52 Td /F2 11 Tf (8. Alternativa A) Tj ET
+BT 0.200 0.250 0.330 rg 72.00 394.30 Td /F1 10.5 Tf (Casos posibles: MM, MH, HM; solo uno es MM.) Tj ET
+0.880 0.900 0.940 RG 0.8 w 56 44 m 556 44 l S
+BT 0.390 0.450 0.550 rg 56.00 30.00 Td /F1 8.5 Tf (Aula Click \267 Material de preparaci\363n PAES) Tj ET
+BT 0.390 0.450 0.550 rg 503.55 30.00 Td /F1 8.5 Tf (P\341gina 3 de 3) Tj ET
+endstream
+endobj
+12 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 11 0 R /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> >>
+endobj
+xref
+0 13
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000135 00000 n 
+0000000232 00000 n 
+0000000334 00000 n 
+0000000401 00000 n 
+0000000491 00000 n 
+0000004610 00000 n 
+0000004756 00000 n 
+0000008917 00000 n 
+0000009064 00000 n 
+0000010936 00000 n 
+trailer
+<< /Size 13 /Root 1 0 R /Info 6 0 R >>
+startxref
+11084
+%%EOF

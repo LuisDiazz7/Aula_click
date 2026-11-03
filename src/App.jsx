@@ -16,6 +16,7 @@ import Ejercitacion from './pages/Ejercitacion'
 import Perfil from './pages/Perfil'
 import TutorIA from './pages/TutorIA'
 import Landing from './pages/Landing'
+import Privacidad from './pages/Privacidad'
 
 function FallbackRoute() {
   const { user, perfil } = useAuth()
@@ -36,6 +37,7 @@ function Shell() {
           </Route>
 
           <Route path="/restablecer-password" element={<RestablecerPassword />} />
+          <Route path="/privacidad" element={<Privacidad />} />
 
           <Route element={<RequireAuth />}>
             <Route path="/crear-perfil" element={<CrearPerfil />} />

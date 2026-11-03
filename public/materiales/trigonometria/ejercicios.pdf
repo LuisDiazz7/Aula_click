@@ -1,36 +1,186 @@
 %PDF-1.4
+%‚„œ”
 1 0 obj
 << /Type /Catalog /Pages 2 0 R >>
 endobj
 2 0 obj
-<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+<< /Type /Pages /Kids [8 0 R 10 0 R 12 0 R] /Count 3 >>
 endobj
 3 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 5 0 R >> >> >>
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
 endobj
 4 0 obj
-<< /Length 416 >>
-stream
-BT /F1 24 Tf 50 720 Td (Ejercicios: TrigonometrÌa) Tj ET
-BT /F1 12 Tf 50 690 Td (Material de estudio de Aula Click.) Tj ET
-BT /F1 10 Tf 50 650 Td (Este documento guia los conceptos clave del tema para preparar la PAES.) Tj ET
-BT /F1 10 Tf 50 630 Td (Revisa los videos del subtema y responde la ejercitacion para practicar.) Tj ET
-BT /F1 10 Tf 50 610 Td (Disenado para 3. o 4. medio, area cientifico-humanista.) Tj ET
-endstream
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
 endobj
 5 0 obj
-<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+<< /Type /Font /Subtype /Type1 /BaseFont /Symbol >>
+endobj
+6 0 obj
+<< /Title (Ejercicios: Trigonometr\355a) /Producer (Aula Click) >>
+endobj
+7 0 obj
+<< /Length 4002 >>
+stream
+0.310 0.270 0.900 rg 0 682 612 110 re f
+BT 0.880 0.900 1.000 rg 56.00 746.00 Td /F1 10 Tf (MATEM\301TICA \267 EJERCITACI\323N TIPO PAES) Tj ET
+BT 1.000 1.000 1.000 rg 56.00 720.00 Td /F2 20 Tf (Ejercicios: Trigonometr\355a) Tj ET
+BT 0.390 0.450 0.550 rg 56.00 635.50 Td /F2 10 Tf (M2 \267 Geometr\355a \267 Razones trigonom\351tricas) Tj ET
+0.950 0.950 1.000 rg 56 557.825 500 73.67500000000001 re f
+0.310 0.270 0.900 rg 56 557.825 3 73.67500000000001 re f
+BT 0.310 0.270 0.900 rg 70.00 604.27 Td /F2 10.5 Tf (Instrucciones) Tj ET
+BT 0.060 0.090 0.160 rg 70.00 585.05 Td /F1 10.5 Tf (Este documento contiene 8 preguntas de selecci\363n m\372ltiple con 4 alternativas. Solo una es correcta.) Tj ET
+BT 0.060 0.090 0.160 rg 70.00 569.82 Td /F1 10.5 Tf (Resp\363ndelas sin mirar la pauta y luego revisa tus resultados en la \372ltima p\341gina.) Tj ET
+BT 0.310 0.270 0.900 rg 56.00 515.53 Td /F2 14 Tf (Preguntas) Tj ET
+BT 0.310 0.270 0.900 rg 56.00 493.58 Td /F2 11 Tf (1.) Tj ET
+BT 0.060 0.090 0.160 rg 78.00 493.58 Td /F1 11 Tf (En un tri\341ngulo rect\341ngulo de catetos 3 y 4 e hipotenusa 5, \277cu\341l es el seno del \341ngulo opuesto al) Tj ET
+BT 0.060 0.090 0.160 rg 78.00 477.63 Td /F1 11 Tf (cateto 3?) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 458.68 Td /F2 11 Tf (A\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 458.68 Td /F1 11 Tf (4/3) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 442.73 Td /F2 11 Tf (B\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 442.73 Td /F1 11 Tf (3/5) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 426.78 Td /F2 11 Tf (C\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 426.78 Td /F1 11 Tf (3/4) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 410.83 Td /F2 11 Tf (D\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 410.83 Td /F1 11 Tf (4/5) Tj ET
+BT 0.310 0.270 0.900 rg 56.00 380.88 Td /F2 11 Tf (2.) Tj ET
+BT 0.060 0.090 0.160 rg 78.00 380.88 Td /F1 11 Tf (En el mismo tri\341ngulo, \277cu\341l es la tangente de ese \341ngulo?) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 361.93 Td /F2 11 Tf (A\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 361.93 Td /F1 11 Tf (5/3) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 345.98 Td /F2 11 Tf (B\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 345.98 Td /F1 11 Tf (3/5) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 330.03 Td /F2 11 Tf (C\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 330.03 Td /F1 11 Tf (4/5) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 314.08 Td /F2 11 Tf (D\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 314.08 Td /F1 11 Tf (3/4) Tj ET
+BT 0.310 0.270 0.900 rg 56.00 284.13 Td /F2 11 Tf (3.) Tj ET
+BT 0.060 0.090 0.160 rg 78.00 284.13 Td /F1 11 Tf (\277Cu\341l es el valor de sen 30\260?) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 265.18 Td /F2 11 Tf (A\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 265.18 Td /F1 11 Tf (1/2) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 249.23 Td /F2 11 Tf (B\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 249.23 Td /F3 11 Tf (\326) Tj /F1 11 Tf (3/2) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 233.28 Td /F2 11 Tf (C\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 233.28 Td /F1 11 Tf (1) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 217.33 Td /F2 11 Tf (D\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 217.33 Td /F3 11 Tf (\326) Tj /F1 11 Tf (2/2) Tj ET
+BT 0.310 0.270 0.900 rg 56.00 187.38 Td /F2 11 Tf (4.) Tj ET
+BT 0.060 0.090 0.160 rg 78.00 187.38 Td /F1 11 Tf (\277Cu\341l es el valor de tan 45\260?) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 168.43 Td /F2 11 Tf (A\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 168.43 Td /F3 11 Tf (\326) Tj /F1 11 Tf (3) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 152.48 Td /F2 11 Tf (B\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 152.48 Td /F1 11 Tf (0) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 136.53 Td /F2 11 Tf (C\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 136.53 Td /F1 11 Tf (1) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 120.58 Td /F2 11 Tf (D\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 120.58 Td /F1 11 Tf (1/2) Tj ET
+0.880 0.900 0.940 RG 0.8 w 56 44 m 556 44 l S
+BT 0.390 0.450 0.550 rg 56.00 30.00 Td /F1 8.5 Tf (Aula Click \267 Material de preparaci\363n PAES) Tj ET
+BT 0.390 0.450 0.550 rg 503.55 30.00 Td /F1 8.5 Tf (P\341gina 1 de 3) Tj ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 7 0 R /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> >>
+endobj
+9 0 obj
+<< /Length 3513 >>
+stream
+BT 0.390 0.450 0.550 rg 56.00 756.00 Td /F1 9 Tf (Ejercicios: Trigonometr\355a) Tj ET
+0.880 0.900 0.940 RG 0.8 w 56 748 m 556 748 l S
+BT 0.310 0.270 0.900 rg 56.00 706.05 Td /F2 11 Tf (5.) Tj ET
+BT 0.060 0.090 0.160 rg 78.00 706.05 Td /F1 11 Tf (Si ) Tj /F3 11 Tf (a) Tj /F1 11 Tf ( es agudo y sen ) Tj /F3 11 Tf (a) Tj /F1 11 Tf ( = 0,6, \277cu\341l es el valor de cos ) Tj /F3 11 Tf (a) Tj /F1 11 Tf (?) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 687.10 Td /F2 11 Tf (A\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 687.10 Td /F1 11 Tf (0,4) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 671.15 Td /F2 11 Tf (B\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 671.15 Td /F1 11 Tf (0,6) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 655.20 Td /F2 11 Tf (C\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 655.20 Td /F1 11 Tf (0,8) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 639.25 Td /F2 11 Tf (D\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 639.25 Td /F1 11 Tf (1,6) Tj ET
+BT 0.310 0.270 0.900 rg 56.00 609.30 Td /F2 11 Tf (6.) Tj ET
+BT 0.060 0.090 0.160 rg 78.00 609.30 Td /F1 11 Tf (Un \341rbol proyecta una sombra de 10 m cuando el \341ngulo de elevaci\363n del sol es 45\260. \277Cu\341l es la) Tj ET
+BT 0.060 0.090 0.160 rg 78.00 593.35 Td /F1 11 Tf (altura del \341rbol?) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 574.40 Td /F2 11 Tf (A\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 574.40 Td /F1 11 Tf (10 m) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 558.45 Td /F2 11 Tf (B\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 558.45 Td /F1 11 Tf (10) Tj /F3 11 Tf (\326) Tj /F1 11 Tf (2 m) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 542.50 Td /F2 11 Tf (C\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 542.50 Td /F1 11 Tf (5 m) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 526.55 Td /F2 11 Tf (D\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 526.55 Td /F1 11 Tf (20 m) Tj ET
+BT 0.310 0.270 0.900 rg 56.00 496.60 Td /F2 11 Tf (7.) Tj ET
+BT 0.060 0.090 0.160 rg 78.00 496.60 Td /F1 11 Tf (Una rampa de 8 m de largo tiene una inclinaci\363n de 30\260. \277Qu\351 altura alcanza?) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 477.65 Td /F2 11 Tf (A\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 477.65 Td /F1 11 Tf (4) Tj /F3 11 Tf (\326) Tj /F1 11 Tf (3 m) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 461.70 Td /F2 11 Tf (B\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 461.70 Td /F1 11 Tf (8) Tj /F3 11 Tf (\326) Tj /F1 11 Tf (3 m) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 445.75 Td /F2 11 Tf (C\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 445.75 Td /F1 11 Tf (16 m) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 429.80 Td /F2 11 Tf (D\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 429.80 Td /F1 11 Tf (4 m) Tj ET
+BT 0.310 0.270 0.900 rg 56.00 399.85 Td /F2 11 Tf (8.) Tj ET
+BT 0.060 0.090 0.160 rg 78.00 399.85 Td /F1 11 Tf (En un tri\341ngulo rect\341ngulo la hipotenusa mide 13 y un cateto 5. \277Cu\341nto mide el otro cateto?) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 380.90 Td /F2 11 Tf (A\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 380.90 Td /F1 11 Tf (12) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 364.95 Td /F2 11 Tf (B\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 364.95 Td /F3 11 Tf (\326) Tj /F1 11 Tf (194) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 349.00 Td /F2 11 Tf (C\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 349.00 Td /F1 11 Tf (18) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 333.05 Td /F2 11 Tf (D\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 333.05 Td /F1 11 Tf (8) Tj ET
+0.880 0.900 0.940 RG 0.8 w 56 44 m 556 44 l S
+BT 0.390 0.450 0.550 rg 56.00 30.00 Td /F1 8.5 Tf (Aula Click \267 Material de preparaci\363n PAES) Tj ET
+BT 0.390 0.450 0.550 rg 503.55 30.00 Td /F1 8.5 Tf (P\341gina 2 de 3) Tj ET
+endstream
+endobj
+10 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 9 0 R /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> >>
+endobj
+11 0 obj
+<< /Length 2125 >>
+stream
+BT 0.390 0.450 0.550 rg 56.00 756.00 Td /F1 9 Tf (Ejercicios: Trigonometr\355a) Tj ET
+0.880 0.900 0.940 RG 0.8 w 56 748 m 556 748 l S
+BT 0.310 0.270 0.900 rg 56.00 691.70 Td /F2 14 Tf (Pauta de respuestas) Tj ET
+BT 0.060 0.090 0.160 rg 56.00 669.75 Td /F2 11 Tf (1. Alternativa B) Tj ET
+BT 0.200 0.250 0.330 rg 72.00 654.52 Td /F1 10.5 Tf (sen ) Tj /F3 10.5 Tf (a) Tj /F1 10.5 Tf ( = opuesto/hipotenusa = 3/5.) Tj ET
+BT 0.060 0.090 0.160 rg 56.00 632.57 Td /F2 11 Tf (2. Alternativa D) Tj ET
+BT 0.200 0.250 0.330 rg 72.00 617.35 Td /F1 10.5 Tf (tan ) Tj /F3 10.5 Tf (a) Tj /F1 10.5 Tf ( = opuesto/adyacente = 3/4.) Tj ET
+BT 0.060 0.090 0.160 rg 56.00 595.40 Td /F2 11 Tf (3. Alternativa A) Tj ET
+BT 0.200 0.250 0.330 rg 72.00 580.17 Td /F1 10.5 Tf (Es un valor notable: sen 30\260 = 1/2.) Tj ET
+BT 0.060 0.090 0.160 rg 56.00 558.22 Td /F2 11 Tf (4. Alternativa C) Tj ET
+BT 0.200 0.250 0.330 rg 72.00 543.00 Td /F1 10.5 Tf (En 45\260 ambos catetos son iguales, as\355 que tan 45\260 = 1.) Tj ET
+BT 0.060 0.090 0.160 rg 56.00 521.05 Td /F2 11 Tf (5. Alternativa C) Tj ET
+BT 0.200 0.250 0.330 rg 72.00 505.82 Td /F1 10.5 Tf (cos^2 ) Tj /F3 10.5 Tf (a) Tj /F1 10.5 Tf ( = 1 ) Tj /F3 10.5 Tf (-) Tj /F1 10.5 Tf ( 0,36 = 0,64, entonces cos ) Tj /F3 10.5 Tf (a) Tj /F1 10.5 Tf ( = 0,8.) Tj ET
+BT 0.060 0.090 0.160 rg 56.00 483.87 Td /F2 11 Tf (6. Alternativa A) Tj ET
+BT 0.200 0.250 0.330 rg 72.00 468.65 Td /F1 10.5 Tf (tan 45\260 = h/10 = 1, entonces h = 10 m.) Tj ET
+BT 0.060 0.090 0.160 rg 56.00 446.70 Td /F2 11 Tf (7. Alternativa D) Tj ET
+BT 0.200 0.250 0.330 rg 72.00 431.47 Td /F1 10.5 Tf (h = 8 \267 sen 30\260 = 8 \267 1/2 = 4 m.) Tj ET
+BT 0.060 0.090 0.160 rg 56.00 409.52 Td /F2 11 Tf (8. Alternativa A) Tj ET
+BT 0.200 0.250 0.330 rg 72.00 394.30 Td /F3 10.5 Tf (\326) Tj /F1 10.5 Tf (\(169 ) Tj /F3 10.5 Tf (-) Tj /F1 10.5 Tf ( 25\) = ) Tj /F3 10.5 Tf (\326) Tj /F1 10.5 Tf (144 = 12.) Tj ET
+0.880 0.900 0.940 RG 0.8 w 56 44 m 556 44 l S
+BT 0.390 0.450 0.550 rg 56.00 30.00 Td /F1 8.5 Tf (Aula Click \267 Material de preparaci\363n PAES) Tj ET
+BT 0.390 0.450 0.550 rg 503.55 30.00 Td /F1 8.5 Tf (P\341gina 3 de 3) Tj ET
+endstream
+endobj
+12 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 11 0 R /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> >>
 endobj
 xref
-0 6
+0 13
 0000000000 65535 f 
-0000000009 00000 n 
-0000000058 00000 n 
-0000000115 00000 n 
-0000000241 00000 n 
-0000000708 00000 n 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000135 00000 n 
+0000000232 00000 n 
+0000000334 00000 n 
+0000000401 00000 n 
+0000000483 00000 n 
+0000004537 00000 n 
+0000004683 00000 n 
+0000008248 00000 n 
+0000008395 00000 n 
+0000010573 00000 n 
 trailer
-<< /Size 6 /Root 1 0 R >>
+<< /Size 13 /Root 1 0 R /Info 6 0 R >>
 startxref
-778
+10721
 %%EOF

@@ -1,36 +1,81 @@
 %PDF-1.4
+%‚„œ”
 1 0 obj
 << /Type /Catalog /Pages 2 0 R >>
 endobj
 2 0 obj
-<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+<< /Type /Pages /Kids [8 0 R] /Count 1 >>
 endobj
 3 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 5 0 R >> >> >>
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
 endobj
 4 0 obj
-<< /Length 418 >>
-stream
-BT /F1 24 Tf 50 720 Td (GuÌa de Reacciones quÌmicas) Tj ET
-BT /F1 12 Tf 50 690 Td (Material de estudio de Aula Click.) Tj ET
-BT /F1 10 Tf 50 650 Td (Este documento guia los conceptos clave del tema para preparar la PAES.) Tj ET
-BT /F1 10 Tf 50 630 Td (Revisa los videos del subtema y responde la ejercitacion para practicar.) Tj ET
-BT /F1 10 Tf 50 610 Td (Disenado para 3. o 4. medio, area cientifico-humanista.) Tj ET
-endstream
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
 endobj
 5 0 obj
-<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+<< /Type /Font /Subtype /Type1 /BaseFont /Symbol >>
+endobj
+6 0 obj
+<< /Title (Gu\355a: Reacciones qu\355micas) /Producer (Aula Click) >>
+endobj
+7 0 obj
+<< /Length 3644 >>
+stream
+0.310 0.270 0.900 rg 0 682 612 110 re f
+BT 0.880 0.900 1.000 rg 56.00 746.00 Td /F1 10 Tf (CIENCIAS \267 GU\315A DE ESTUDIO) Tj ET
+BT 1.000 1.000 1.000 rg 56.00 720.00 Td /F2 20 Tf (Gu\355a: Reacciones qu\355micas) Tj ET
+BT 0.390 0.450 0.550 rg 56.00 635.50 Td /F2 10 Tf (Ciencias \267 Qu\355mica \267 Reacciones qu\355micas) Tj ET
+BT 0.310 0.270 0.900 rg 56.00 601.20 Td /F2 14 Tf (\277De qu\351 trata?) Tj ET
+BT 0.060 0.090 0.160 rg 56.00 579.25 Td /F1 11 Tf (En una reacci\363n qu\355mica las sustancias iniciales \(reactivos\) se transforman en sustancias nuevas) Tj ET
+BT 0.060 0.090 0.160 rg 56.00 563.30 Td /F1 11 Tf (\(productos\) por la reorganizaci\363n de sus \341tomos.) Tj ET
+BT 0.310 0.270 0.900 rg 56.00 525.00 Td /F2 14 Tf (Conceptos clave) Tj ET
+BT 0.310 0.270 0.900 rg 58.00 503.05 Td /F1 11 Tf (\225) Tj ET
+BT 0.060 0.090 0.160 rg 72.00 503.05 Td /F1 11 Tf (Evidencias: cambio de color, liberaci\363n de gas, formaci\363n de precipitado, cambio de temperatura o) Tj ET
+BT 0.060 0.090 0.160 rg 72.00 487.10 Td /F1 11 Tf (emisi\363n de luz.) Tj ET
+BT 0.310 0.270 0.900 rg 58.00 468.15 Td /F1 11 Tf (\225) Tj ET
+BT 0.060 0.090 0.160 rg 72.00 468.15 Td /F1 11 Tf (S\355ntesis: A + B ) Tj /F3 11 Tf (\256) Tj /F1 11 Tf ( AB. Descomposici\363n: AB ) Tj /F3 11 Tf (\256) Tj /F1 11 Tf ( A + B.) Tj ET
+BT 0.310 0.270 0.900 rg 58.00 449.20 Td /F1 11 Tf (\225) Tj ET
+BT 0.060 0.090 0.160 rg 72.00 449.20 Td /F1 11 Tf (Sustituci\363n simple: A + BC ) Tj /F3 11 Tf (\256) Tj /F1 11 Tf ( AC + B. Doble sustituci\363n: AB + CD ) Tj /F3 11 Tf (\256) Tj /F1 11 Tf ( AD + CB.) Tj ET
+BT 0.310 0.270 0.900 rg 58.00 430.25 Td /F1 11 Tf (\225) Tj ET
+BT 0.060 0.090 0.160 rg 72.00 430.25 Td /F1 11 Tf (Combusti\363n: un combustible reacciona con O2 y produce CO2 y H2O.) Tj ET
+BT 0.310 0.270 0.900 rg 58.00 411.30 Td /F1 11 Tf (\225) Tj ET
+BT 0.060 0.090 0.160 rg 72.00 411.30 Td /F1 11 Tf (Exot\351rmica: libera energ\355a. Endot\351rmica: absorbe energ\355a.) Tj ET
+BT 0.310 0.270 0.900 rg 58.00 392.35 Td /F1 11 Tf (\225) Tj ET
+BT 0.060 0.090 0.160 rg 72.00 392.35 Td /F1 11 Tf (Balancear: igualar la cantidad de \341tomos de cada elemento en ambos lados usando coeficientes.) Tj ET
+BT 0.310 0.270 0.900 rg 56.00 354.05 Td /F2 14 Tf (Ejemplo resuelto) Tj ET
+0.950 0.950 1.000 rg 56 289.6000000000001 500 58.45 re f
+0.310 0.270 0.900 rg 56 289.6000000000001 3 58.45 re f
+BT 0.310 0.270 0.900 rg 70.00 320.83 Td /F2 10.5 Tf (Problema) Tj ET
+BT 0.060 0.090 0.160 rg 70.00 301.60 Td /F1 10.5 Tf (Balancea la ecuaci\363n H2 + O2 ) Tj /F3 10.5 Tf (\256) Tj /F1 10.5 Tf ( H2O.) Tj ET
+0.950 0.950 1.000 rg 56 203.92500000000007 500 73.67500000000001 re f
+0.310 0.270 0.900 rg 56 203.92500000000007 3 73.67500000000001 re f
+BT 0.310 0.270 0.900 rg 70.00 250.38 Td /F2 10.5 Tf (Soluci\363n) Tj ET
+BT 0.060 0.090 0.160 rg 70.00 231.15 Td /F1 10.5 Tf (Hay 2 O a la izquierda y 1 a la derecha: se pone 2 H2O. Ahora hay 4 H a la derecha: se pone 2 H2.) Tj ET
+BT 0.060 0.090 0.160 rg 70.00 215.93 Td /F1 10.5 Tf (Resultado: 2 H2 + O2 ) Tj /F3 10.5 Tf (\256) Tj /F1 10.5 Tf ( 2 H2O.) Tj ET
+BT 0.310 0.270 0.900 rg 56.00 161.63 Td /F2 14 Tf (Para seguir practicando) Tj ET
+BT 0.060 0.090 0.160 rg 56.00 139.68 Td /F1 11 Tf (Descarga el PDF de ejercicios de este tema, revisa los videos en Aula Click y luego resuelve la) Tj ET
+BT 0.060 0.090 0.160 rg 56.00 123.73 Td /F1 11 Tf (ejercitaci\363n en l\355nea para medir tu avance.) Tj ET
+0.880 0.900 0.940 RG 0.8 w 56 44 m 556 44 l S
+BT 0.390 0.450 0.550 rg 56.00 30.00 Td /F1 8.5 Tf (Aula Click \267 Material de preparaci\363n PAES) Tj ET
+BT 0.390 0.450 0.550 rg 503.55 30.00 Td /F1 8.5 Tf (P\341gina 1 de 1) Tj ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 7 0 R /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> >>
 endobj
 xref
-0 6
+0 9
 0000000000 65535 f 
-0000000009 00000 n 
-0000000058 00000 n 
-0000000115 00000 n 
-0000000241 00000 n 
-0000000710 00000 n 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000121 00000 n 
+0000000218 00000 n 
+0000000320 00000 n 
+0000000387 00000 n 
+0000000472 00000 n 
+0000004168 00000 n 
 trailer
-<< /Size 6 /Root 1 0 R >>
+<< /Size 9 /Root 1 0 R /Info 6 0 R >>
 startxref
-780
+4314
 %%EOF

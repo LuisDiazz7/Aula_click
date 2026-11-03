@@ -49,9 +49,11 @@ export async function getRama(idRama) {
       id,
       nombre,
       id_asignatura,
-      temas ( id, nombre )
+      asignaturas ( id, nombre ),
+      temas ( id, nombre, videos ( count ), pdfs ( count ), ejercicios ( count ) )
     `)
     .eq('id', idRama)
+    .order('id', { referencedTable: 'temas' })
     .single()
 
   if (error) return { error: error.message }

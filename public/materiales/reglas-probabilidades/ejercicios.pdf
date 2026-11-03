@@ -1,0 +1,186 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [8 0 R 10 0 R 12 0 R] /Count 3 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Symbol >>
+endobj
+6 0 obj
+<< /Title (Ejercicios: Reglas de las probabilidades) /Producer (Aula Click) >>
+endobj
+7 0 obj
+<< /Length 4078 >>
+stream
+0.310 0.270 0.900 rg 0 682 612 110 re f
+BT 0.880 0.900 1.000 rg 56.00 746.00 Td /F1 10 Tf (MATEM\301TICA \267 EJERCITACI\323N TIPO PAES) Tj ET
+BT 1.000 1.000 1.000 rg 56.00 720.00 Td /F2 20 Tf (Ejercicios: Reglas de las probabilidades) Tj ET
+BT 0.390 0.450 0.550 rg 56.00 635.50 Td /F2 10 Tf (M1 \267 Probabilidad y estad\355stica \267 Reglas de las probabilidades) Tj ET
+0.950 0.950 1.000 rg 56 557.825 500 73.67500000000001 re f
+0.310 0.270 0.900 rg 56 557.825 3 73.67500000000001 re f
+BT 0.310 0.270 0.900 rg 70.00 604.27 Td /F2 10.5 Tf (Instrucciones) Tj ET
+BT 0.060 0.090 0.160 rg 70.00 585.05 Td /F1 10.5 Tf (Este documento contiene 8 preguntas de selecci\363n m\372ltiple con 4 alternativas. Solo una es correcta.) Tj ET
+BT 0.060 0.090 0.160 rg 70.00 569.82 Td /F1 10.5 Tf (Resp\363ndelas sin mirar la pauta y luego revisa tus resultados en la \372ltima p\341gina.) Tj ET
+BT 0.310 0.270 0.900 rg 56.00 515.53 Td /F2 14 Tf (Preguntas) Tj ET
+BT 0.310 0.270 0.900 rg 56.00 493.58 Td /F2 11 Tf (1.) Tj ET
+BT 0.060 0.090 0.160 rg 78.00 493.58 Td /F1 11 Tf (Al lanzar un dado, \277cu\341l es la probabilidad de obtener un n\372mero primo?) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 474.63 Td /F2 11 Tf (A\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 474.63 Td /F1 11 Tf (2/3) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 458.68 Td /F2 11 Tf (B\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 458.68 Td /F1 11 Tf (1/3) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 442.73 Td /F2 11 Tf (C\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 442.73 Td /F1 11 Tf (1/2) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 426.78 Td /F2 11 Tf (D\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 426.78 Td /F1 11 Tf (1/6) Tj ET
+BT 0.310 0.270 0.900 rg 56.00 396.83 Td /F2 11 Tf (2.) Tj ET
+BT 0.060 0.090 0.160 rg 78.00 396.83 Td /F1 11 Tf (Si la probabilidad de que llueva es 0,3, \277cu\341l es la probabilidad de que no llueva?) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 377.88 Td /F2 11 Tf (A\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 377.88 Td /F1 11 Tf (0) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 361.93 Td /F2 11 Tf (B\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 361.93 Td /F1 11 Tf (0,7) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 345.98 Td /F2 11 Tf (C\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 345.98 Td /F1 11 Tf (1,3) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 330.03 Td /F2 11 Tf (D\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 330.03 Td /F1 11 Tf (0,3) Tj ET
+BT 0.310 0.270 0.900 rg 56.00 300.08 Td /F2 11 Tf (3.) Tj ET
+BT 0.060 0.090 0.160 rg 78.00 300.08 Td /F1 11 Tf (Al lanzar dos monedas, \277cu\341l es la probabilidad de obtener dos caras?) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 281.13 Td /F2 11 Tf (A\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 281.13 Td /F1 11 Tf (3/4) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 265.18 Td /F2 11 Tf (B\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 265.18 Td /F1 11 Tf (1/3) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 249.23 Td /F2 11 Tf (C\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 249.23 Td /F1 11 Tf (1/4) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 233.28 Td /F2 11 Tf (D\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 233.28 Td /F1 11 Tf (1/2) Tj ET
+BT 0.310 0.270 0.900 rg 56.00 203.33 Td /F2 11 Tf (4.) Tj ET
+BT 0.060 0.090 0.160 rg 78.00 203.33 Td /F1 11 Tf (Se extrae una carta de un naipe ingl\351s de 52 cartas. \277Cu\341l es la probabilidad de obtener un as o) Tj ET
+BT 0.060 0.090 0.160 rg 78.00 187.38 Td /F1 11 Tf (un coraz\363n?) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 168.43 Td /F2 11 Tf (A\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 168.43 Td /F1 11 Tf (17/52) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 152.48 Td /F2 11 Tf (B\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 152.48 Td /F1 11 Tf (1/4) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 136.53 Td /F2 11 Tf (C\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 136.53 Td /F1 11 Tf (4/13) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 120.58 Td /F2 11 Tf (D\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 120.58 Td /F1 11 Tf (1/52) Tj ET
+0.880 0.900 0.940 RG 0.8 w 56 44 m 556 44 l S
+BT 0.390 0.450 0.550 rg 56.00 30.00 Td /F1 8.5 Tf (Aula Click \267 Material de preparaci\363n PAES) Tj ET
+BT 0.390 0.450 0.550 rg 503.55 30.00 Td /F1 8.5 Tf (P\341gina 1 de 3) Tj ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 7 0 R /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> >>
+endobj
+9 0 obj
+<< /Length 3321 >>
+stream
+BT 0.390 0.450 0.550 rg 56.00 756.00 Td /F1 9 Tf (Ejercicios: Reglas de las probabilidades) Tj ET
+0.880 0.900 0.940 RG 0.8 w 56 748 m 556 748 l S
+BT 0.310 0.270 0.900 rg 56.00 706.05 Td /F2 11 Tf (5.) Tj ET
+BT 0.060 0.090 0.160 rg 78.00 706.05 Td /F1 11 Tf (Se lanzan dos dados. \277Cu\341l es la probabilidad de que ambos muestren 6?) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 687.10 Td /F2 11 Tf (A\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 687.10 Td /F1 11 Tf (1/6) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 671.15 Td /F2 11 Tf (B\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 671.15 Td /F1 11 Tf (2/36) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 655.20 Td /F2 11 Tf (C\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 655.20 Td /F1 11 Tf (1/36) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 639.25 Td /F2 11 Tf (D\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 639.25 Td /F1 11 Tf (1/12) Tj ET
+BT 0.310 0.270 0.900 rg 56.00 609.30 Td /F2 11 Tf (6.) Tj ET
+BT 0.060 0.090 0.160 rg 78.00 609.30 Td /F1 11 Tf (A y B son eventos excluyentes con P\(A\) = 0,2 y P\(B\) = 0,5. \277Cu\341l es P\(A ) Tj /F3 11 Tf (\310) Tj /F1 11 Tf ( B\)?) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 590.35 Td /F2 11 Tf (A\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 590.35 Td /F1 11 Tf (0,7) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 574.40 Td /F2 11 Tf (B\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 574.40 Td /F1 11 Tf (0,1) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 558.45 Td /F2 11 Tf (C\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 558.45 Td /F1 11 Tf (0,3) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 542.50 Td /F2 11 Tf (D\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 542.50 Td /F1 11 Tf (0,6) Tj ET
+BT 0.310 0.270 0.900 rg 56.00 512.55 Td /F2 11 Tf (7.) Tj ET
+BT 0.060 0.090 0.160 rg 78.00 512.55 Td /F1 11 Tf (Una bolsa tiene 3 bolitas rojas y 5 azules. Se extraen dos con reposici\363n. \277Cu\341l es la) Tj ET
+BT 0.060 0.090 0.160 rg 78.00 496.60 Td /F1 11 Tf (probabilidad de que ambas sean rojas?) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 477.65 Td /F2 11 Tf (A\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 477.65 Td /F1 11 Tf (9/64) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 461.70 Td /F2 11 Tf (B\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 461.70 Td /F1 11 Tf (6/64) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 445.75 Td /F2 11 Tf (C\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 445.75 Td /F1 11 Tf (3/8) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 429.80 Td /F2 11 Tf (D\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 429.80 Td /F1 11 Tf (9/56) Tj ET
+BT 0.310 0.270 0.900 rg 56.00 399.85 Td /F2 11 Tf (8.) Tj ET
+BT 0.060 0.090 0.160 rg 78.00 399.85 Td /F1 11 Tf (Al lanzar un dado com\372n, \277cu\341l es la probabilidad de obtener un 7?) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 380.90 Td /F2 11 Tf (A\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 380.90 Td /F1 11 Tf (0) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 364.95 Td /F2 11 Tf (B\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 364.95 Td /F1 11 Tf (1/6) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 349.00 Td /F2 11 Tf (C\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 349.00 Td /F1 11 Tf (1) Tj ET
+BT 0.060 0.090 0.160 rg 82.00 333.05 Td /F2 11 Tf (D\)) Tj ET
+BT 0.060 0.090 0.160 rg 104.00 333.05 Td /F1 11 Tf (1/7) Tj ET
+0.880 0.900 0.940 RG 0.8 w 56 44 m 556 44 l S
+BT 0.390 0.450 0.550 rg 56.00 30.00 Td /F1 8.5 Tf (Aula Click \267 Material de preparaci\363n PAES) Tj ET
+BT 0.390 0.450 0.550 rg 503.55 30.00 Td /F1 8.5 Tf (P\341gina 2 de 3) Tj ET
+endstream
+endobj
+10 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 9 0 R /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> >>
+endobj
+11 0 obj
+<< /Length 1811 >>
+stream
+BT 0.390 0.450 0.550 rg 56.00 756.00 Td /F1 9 Tf (Ejercicios: Reglas de las probabilidades) Tj ET
+0.880 0.900 0.940 RG 0.8 w 56 748 m 556 748 l S
+BT 0.310 0.270 0.900 rg 56.00 691.70 Td /F2 14 Tf (Pauta de respuestas) Tj ET
+BT 0.060 0.090 0.160 rg 56.00 669.75 Td /F2 11 Tf (1. Alternativa C) Tj ET
+BT 0.200 0.250 0.330 rg 72.00 654.52 Td /F1 10.5 Tf (Los primos son 2, 3 y 5: 3/6.) Tj ET
+BT 0.060 0.090 0.160 rg 56.00 632.57 Td /F2 11 Tf (2. Alternativa B) Tj ET
+BT 0.200 0.250 0.330 rg 72.00 617.35 Td /F1 10.5 Tf (1 ) Tj /F3 10.5 Tf (-) Tj /F1 10.5 Tf ( 0,3 = 0,7.) Tj ET
+BT 0.060 0.090 0.160 rg 56.00 595.40 Td /F2 11 Tf (3. Alternativa C) Tj ET
+BT 0.200 0.250 0.330 rg 72.00 580.17 Td /F1 10.5 Tf (\(1/2\)\267\(1/2\) = 1/4.) Tj ET
+BT 0.060 0.090 0.160 rg 56.00 558.22 Td /F2 11 Tf (4. Alternativa C) Tj ET
+BT 0.200 0.250 0.330 rg 72.00 543.00 Td /F1 10.5 Tf (4/52 + 13/52 ) Tj /F3 10.5 Tf (-) Tj /F1 10.5 Tf ( 1/52 = 16/52 = 4/13.) Tj ET
+BT 0.060 0.090 0.160 rg 56.00 521.05 Td /F2 11 Tf (5. Alternativa C) Tj ET
+BT 0.200 0.250 0.330 rg 72.00 505.82 Td /F1 10.5 Tf (\(1/6\)\267\(1/6\).) Tj ET
+BT 0.060 0.090 0.160 rg 56.00 483.87 Td /F2 11 Tf (6. Alternativa A) Tj ET
+BT 0.200 0.250 0.330 rg 72.00 468.65 Td /F1 10.5 Tf (Al ser excluyentes, se suman.) Tj ET
+BT 0.060 0.090 0.160 rg 56.00 446.70 Td /F2 11 Tf (7. Alternativa A) Tj ET
+BT 0.200 0.250 0.330 rg 72.00 431.47 Td /F1 10.5 Tf (\(3/8\)\267\(3/8\) = 9/64.) Tj ET
+BT 0.060 0.090 0.160 rg 56.00 409.52 Td /F2 11 Tf (8. Alternativa A) Tj ET
+BT 0.200 0.250 0.330 rg 72.00 394.30 Td /F1 10.5 Tf (Es un evento imposible.) Tj ET
+0.880 0.900 0.940 RG 0.8 w 56 44 m 556 44 l S
+BT 0.390 0.450 0.550 rg 56.00 30.00 Td /F1 8.5 Tf (Aula Click \267 Material de preparaci\363n PAES) Tj ET
+BT 0.390 0.450 0.550 rg 503.55 30.00 Td /F1 8.5 Tf (P\341gina 3 de 3) Tj ET
+endstream
+endobj
+12 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 11 0 R /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> >>
+endobj
+xref
+0 13
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000135 00000 n 
+0000000232 00000 n 
+0000000334 00000 n 
+0000000401 00000 n 
+0000000495 00000 n 
+0000004625 00000 n 
+0000004771 00000 n 
+0000008144 00000 n 
+0000008291 00000 n 
+0000010155 00000 n 
+trailer
+<< /Size 13 /Root 1 0 R /Info 6 0 R >>
+startxref
+10303
+%%EOF
