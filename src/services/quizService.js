@@ -23,6 +23,24 @@ export async function getHistorialRespuestas(idUsuario, idTema) {
   return { data }
 }
 
+// Mejor puntaje e intentos del usuario en cada tema indicado: { [idTema]: { mejor, intentos } }
+export async function getResumenPorTemas(idUsuario, idsTemas) {
+  if (!idUsuario || idsTemas.length === 0) return { data: {} }
+  const { data, error } = await supabase
+    .from('respuestas_estudiante')
+    .select('id_tema, puntaje')
+    .eq('id_usuario', idUsuario)
+    .in('id_tema', idsTemas)
+
+  if (error) return { error: error.message }
+  const resumen = {}
+  for (const r of data || []) {
+    const actual = resumen[r.id_tema] || { mejor: 0, intentos: 0 }
+    resumen[r.id_tema] = { mejor: Math.max(actual.mejor, r.puntaje ?? 0), intentos: actual.intentos + 1 }
+  }
+  return { data: resumen }
+}
+
 export async function getUltimaActividad(idUsuario) {
   const { data, error } = await supabase
     .from('respuestas_estudiante')

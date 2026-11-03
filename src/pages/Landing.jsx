@@ -266,6 +266,7 @@ export default function Landing() {
             <span className="brand-name">Aula Click</span>
           </div>
           <p>Plataforma educativa para estudiantes de enseñanza media.</p>
+          <p><Link to="/privacidad">Política de Privacidad y Seguridad</Link></p>
           <p className="muted">© {new Date().getFullYear()} Aula Click. Todos los derechos reservados.</p>
         </Reveal>
       </footer>

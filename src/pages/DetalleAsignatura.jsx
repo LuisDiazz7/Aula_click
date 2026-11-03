@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { getRamasPorAsignatura, getAsignatura } from '../services/contentService'
 import RamaCard from '../components/RamaCard'
+import TemarioPaes from '../components/TemarioPaes'
 import Loading from '../components/Loading'
 import { iconMap } from '../utils/icons'
 
@@ -44,6 +45,7 @@ export default function DetalleAsignatura() {
 
   const nombre = asignatura?.nombre || ''
   const Icon = nombre ? iconMap[nombre.toLowerCase()] : null
+  const totalTemas = ramas.reduce((suma, r) => suma + (r.temas?.length ?? 0), 0)
 
   return (
     <div className="page">
@@ -60,15 +62,29 @@ export default function DetalleAsignatura() {
         {Icon && <div className="subject-icon lg"><Icon /></div>}
       </div>
 
-      {ramas.length === 0 ? (
-        <p className="empty-state">Esta asignatura aún no tiene ramas.</p>
-      ) : (
-        <div className="grid">
-          {ramas.map((r) => (
-            <RamaCard key={r.id} rama={r} />
-          ))}
+      <section className="ramas" data-subject={nombre.toLowerCase()} aria-labelledby="ramas-titulo">
+        <div className="ramas-head">
+          <h2 id="ramas-titulo">Ramas de estudio</h2>
+          {ramas.length > 0 && (
+            <p>
+              {ramas.length} rama{ramas.length === 1 ? '' : 's'} · {totalTemas} tema{totalTemas === 1 ? '' : 's'} para
+              estudiar
+            </p>
+          )}
         </div>
-      )}
+
+        {ramas.length === 0 ? (
+          <p className="empty-state">Esta asignatura aún no tiene ramas.</p>
+        ) : (
+          <div className="ramas-grid">
+            {ramas.map((r, i) => (
+              <RamaCard key={r.id} rama={r} indice={i} />
+            ))}
+          </div>
+        )}
+      </section>
+
+      <TemarioPaes asignatura={nombre} />
     </div>
   )
 }

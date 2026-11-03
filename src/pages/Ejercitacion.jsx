@@ -39,7 +39,7 @@ export default function Ejercitacion() {
         <p>Responde las preguntas y al final conocerás tu puntaje, las respuestas correctas y tu tiempo.</p>
       </div>
 
-      <EjercitacionPanel idTema={id} onVolver={() => navigate(`/tema/${id}`)} />
+      <EjercitacionPanel idTema={id} onVolver={() => navigate(`/tema/${id}`)} tema={tema} />
     </div>
   )
 }
